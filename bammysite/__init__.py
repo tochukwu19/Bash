@@ -6,14 +6,17 @@ from flask_script import Manager
 import os
 
 app = Flask(__name__)
-basedir = os.path.abspath(os.path.dirname(__file__))
+'''basedir = os.path.abspath(os.path.dirname(__file__))
 
 # session key
-app.secret_key = os.urandom(24)
+#app.secret_key = os.urandom(24)
 
-#Database
+# Database config
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'bammy.sqlite')
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False'''
+
+app.config.from_pyfile('config.cfg')
+
 # Init db
 db = SQLAlchemy(app)
 
@@ -21,7 +24,7 @@ db = SQLAlchemy(app)
 ma = Marshmallow(app)
 
 # import blueprint
-#from bammysite.site.views import sitemod
+from bammysite.site.views import sitemod
 
 # register blueprint
-#app.register_blueprint(site.views.sitemod)
+app.register_blueprint(site.views.sitemod)
