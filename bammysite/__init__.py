@@ -12,10 +12,11 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 app.secret_key = os.urandom(24)
 
 #Database
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'db.sqlite')
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'bammy.sqlite')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # Init db
 db = SQLAlchemy(app)
+
 # Init Marshmallow
 ma = Marshmallow(app)
 

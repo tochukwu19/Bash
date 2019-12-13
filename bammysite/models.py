@@ -1,22 +1,7 @@
 from bammysite import db,ma
 
-class H_User(db.Model):
-	# Ward's details
-	id = db.Column(db.Integer,nullable=False,primary_key=True)
-	Sname = db.Column(db.String(100))	
-	Sdate = db.Column(db.String(200))
-	Sbg = db.Column(db.String(100))
-	Sbp = db.Column(db.String(100))
-	Sog = db.Column(db.String(50))
-	Sgen = db.Column(db.String(50))
-	Slga = db.Column(db.String(50))
-
-	# prospective student's details
-	Ssch = db.Column(db.Text(200))
-	Sscha = db.Column(db.String(200))
-	Sclass = db.Column(db.String(100))
-	Syear = db.Column(db.String(100))
-
+# Parent's data
+class Parent(db.Model):
 	# Parent's details
 	name = db.Column(db.String(100))
 	raddress = db.Column(db.String(100))
@@ -27,30 +12,55 @@ class H_User(db.Model):
 	siblings = db.Column(db.Integer)
 
 	#relationship
-	children = db.relationship('h_user_ow',backref='parent')
+	children = db.relationship('Siblings','Student',backref='parent')
 
-# sibling class
-class H_User_ow(db.Model):
+# Model below describes prospective student's data
+
+class Student(db.Model):
+	# Ward's details
+	id = db.Column(db.Integer,nullable=False,primary_key=True)
+	name = db.Column(db.String(100))	
+	dob = db.Column(db.String(200))
+	bg = db.Column(db.String(100))
+	bp = db.Column(db.String(100))
+	state = db.Column(db.String(50))
+	gen = db.Column(db.String(50))
+	lga = db.Column(db.String(50))
+
+	sch = db.Column(db.Text(200))
+	sch_address = db.Column(db.String(200))
+	class_ = db.Column(db.String(100))
+	year = db.Column(db.String(100))
+	parentid = db.Column(db.Integer,db.ForeignKey('Parent.id'))
+
+# sibling details
+class Siblings(db.Model):
 	id = db.Column(db.Integer,nullable=False,primary_key=True)
 	name = db.Column(db.String(100))
-	sibclass = db.Column(db.String(100))
-	sibyear = db.Column(db.String(100))
-	parentid = db.Column(db.Integer,db.ForeignKey('h_user.id'))
+	class_ = db.Column(db.String(100))
+	year = db.Column(db.String(100))
+	parentid = db.Column(db.Integer,db.ForeignKey('Parent.id'))
 
-
-# User Schema
-class UserSchema(ma.Schema):
+# Parent's Serialization Schema
+class ParentSchema(ma.Schema):
 	class Meta:
-		fields = ('id','name','email','password')
+		fields = ('id','name','email','tel','family','siblings','oaddress','raddress')
 
+parent_schema = ParentSchema()
+parents_schema = ParentSchema(many=True)
 
-user_schema = UserSchema()
-users_schema = UserSchema(many=True)
-
-# Note Schema
-class NoteSchema(ma.Schema):
+# Student's Serialization Schema
+class StudentSchema(ma.Schema):
 	class Meta:
-		fields = ('id','title','body')
+		fields = ('id','name','dob','bg','bp','state','gen','lga','sch','sch_address','class_','year','parentid')
 
-note_schema = NoteSchema()
-notes_schema = NoteSchema(many=True)
+student_schema = StudentSchema()
+students_schema = StudentSchema(many=True)
+
+# sibling schema
+class SiblingSchema(ma.Schema):
+	class Meta:
+		fields = ('id','name','class_','year','parentid')
+
+sibling_schema = SiblingSchema()
+siblings_schema = SiblingSchema(many=True)
