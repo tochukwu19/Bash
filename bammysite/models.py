@@ -3,6 +3,8 @@ from bammysite import db,ma
 # Parent's data
 class Parent(db.Model):
 	# Parent's details
+	__tablename__ = 'Parent'
+	id = db.Column(db.Integer,nullable=False,primary_key=True)
 	name = db.Column(db.String(100))
 	raddress = db.Column(db.String(100))
 	oaddress = db.Column(db.String(100))
@@ -18,6 +20,7 @@ class Parent(db.Model):
 
 class Student(db.Model):
 	# Ward's details
+	__tablename__ = 'Student'
 	id = db.Column(db.Integer,nullable=False,primary_key=True)
 	name = db.Column(db.String(100))	
 	dob = db.Column(db.String(200))
@@ -27,14 +30,15 @@ class Student(db.Model):
 	gen = db.Column(db.String(50))
 	lga = db.Column(db.String(50))
 
-	sch = db.Column(db.Text(200))
-	sch_address = db.Column(db.String(200))
+	school = db.Column(db.Text(200))
+	school_address = db.Column(db.String(200))
 	class_ = db.Column(db.String(100))
 	year = db.Column(db.String(100))
 	parentid = db.Column(db.Integer,db.ForeignKey('Parent.id'))
 
 # sibling details
 class Siblings(db.Model):
+	__tablename__ = 'Siblings'
 	id = db.Column(db.Integer,nullable=False,primary_key=True)
 	name = db.Column(db.String(100))
 	class_ = db.Column(db.String(100))
@@ -52,7 +56,7 @@ parents_schema = ParentSchema(many=True)
 # Student's Serialization Schema
 class StudentSchema(ma.Schema):
 	class Meta:
-		fields = ('id','name','dob','bg','bp','state','gen','lga','sch','sch_address','class_','year','parentid')
+		fields = ('id','name','dob','bg','bp','state','gen','lga','school','school_address','class_','year','parentid')
 
 student_schema = StudentSchema()
 students_schema = StudentSchema(many=True)
