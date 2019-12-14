@@ -13,3 +13,35 @@ def before_request():
 	if 'user' in session:
 		g.user = session['user']'''
 
+
+# High school application
+@sitemod.route('/application',methods=['GET','POST'])
+def application():
+	if request.method == 'POST':
+		# fetch parent-data from form
+		pname = request.json['name']
+		raddress = request.json['raddress']
+		oaddress = request.json['oaddress']
+		tel = request.json['tel']
+		email = request.json['email']
+		family = request.json['family']
+		siblings = reuest.json['siblings']
+		
+		# fetch student data
+		sname = request.json['sname']
+		dob = request.json['dob']
+		bg = request.json['bg']
+		bp = request.json['bp']
+		state = request.json['state']
+		gen = request.json['gen']
+		lga = request.json['lga']
+		school = request.json['school']
+		school_address = request.json['school_address']
+		class_ = request.json['class_']
+		year = request.json['year']
+
+		# fetch sibling data
+		s_name = request.json['s_name']
+		s_class = request.json['s_class']
+		s_year = request.json['s_year']
+

@@ -5,7 +5,7 @@ class Parent(db.Model):
 	# Parent's details
 	__tablename__ = 'Parent'
 	id = db.Column(db.Integer,nullable=False,primary_key=True)
-	name = db.Column(db.String(100))
+	pname = db.Column(db.String(100))
 	raddress = db.Column(db.String(100))
 	oaddress = db.Column(db.String(100))
 	tel = db.Column(db.String(100))
@@ -22,7 +22,7 @@ class Student(db.Model):
 	# Ward's details
 	__tablename__ = 'Student'
 	id = db.Column(db.Integer,nullable=False,primary_key=True)
-	name = db.Column(db.String(100))	
+	sname = db.Column(db.String(100))	
 	dob = db.Column(db.String(200))
 	bg = db.Column(db.String(100))
 	bp = db.Column(db.String(100))
@@ -40,9 +40,9 @@ class Student(db.Model):
 class Siblings(db.Model):
 	__tablename__ = 'Siblings'
 	id = db.Column(db.Integer,nullable=False,primary_key=True)
-	name = db.Column(db.String(100))
-	class_ = db.Column(db.String(100))
-	year = db.Column(db.String(100))
+	s_name = db.Column(db.String(100))
+	s_class_ = db.Column(db.String(100))
+	s_year = db.Column(db.String(100))
 	parentid = db.Column(db.Integer,db.ForeignKey('Parent.id'))
 
 # Parent's Serialization Schema
