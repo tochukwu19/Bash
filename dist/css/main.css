@@ -1,0 +1,428 @@
+body{
+    background-color:#f3f3f3;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    overflow-x: hidden;
+}
+
+header > .social-media-nav{
+    width: 100%;
+    height: 45px;
+    background-color: #05668D;
+    color: #fff;
+    padding: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa{
+    padding-right: 4px;
+}
+
+header > .social-media-nav > .ul1{
+    list-style-type: none;
+    padding: 5px;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 65vw;
+}
+header > .social-media-nav > .ul2{
+    list-style-type: none;
+    padding: 5px;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 20vw;
+}
+
+/* 
+header > .social-media-nav > .ul1{
+    list-style-type: none;
+    padding: 5px;
+    margin: 0;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+}
+header > .social-media-nav > .ul2{
+    list-style-type: none;
+    padding: 5px;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+} */
+
+
+
+.premium{
+    width: 100%;
+    height: 50vh;
+    padding: 15px;
+    box-sizing: border-box;
+    background-image: url("/img/DSC_0538.JPG") !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.nav-bar{
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+    color: #fff;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 19px;
+}
+
+.logo-side {
+    width: 25vw;
+    height: 87.5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-side {
+    width: 50vw;
+    height: 87.5px;
+    list-style-type: none;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+
+.nav-side > li:hover{
+    color: #BBA24E;
+}
+.nav-overlay > li:hover{
+    color: #BBA24E;
+}
+
+.active{
+    color: #D4972E;
+}
+
+.logo{
+    height: 70px;
+    width: 70px;
+}
+
+.logoContainer{
+    padding-top: 15px;
+    font-size: 30px;
+}
+
+.brandName{
+    font-size: 30px;
+}
+
+.jumboText{
+    display: grid;
+    justify-items: center;
+    height: 100px;
+    width: 100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    font-weight: bolder;
+    color: #4D1010;
+   
+ }
+
+ .latest{
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    color: #F3AF57;
+ }
+
+ .Reg{
+     height: 60px;
+     width: 200px;
+     font-size: 16px;
+     background-color: #11711E;
+     color: #fff;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     border-radius: 30px;
+     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+     text-align: center;
+ }
+
+ hr{
+     border: none;
+ }
+
+ .hr1{
+     width: 180px;
+     height: 1px;
+     background-color: #9D9D9D;
+ }
+
+ .hr2{
+     width: 100px;
+     height: 1px;
+     background-color: #9D9D9D;
+ }
+
+ .hr5{
+     width: 180px;
+     height: 1px;
+     background-color: #9D9D9D;
+ }
+
+ .hr4{
+     width: 100px;
+     height: 1px;
+     background-color: #9D9D9D;
+ }
+
+ .news-container{
+     height: 210%;
+     width: 100%;
+     box-sizing: border-box;
+     padding: 15px;
+     display: grid;
+     grid-auto-flow: column;
+     justify-content: space-around;
+     justify-items: center;
+ }
+
+ .news{
+     width: 65%;
+     line-height: 1.5;
+     color: #427AA1;
+     border: 1px solid #05668D;
+     border-radius: 10px;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+     text-align: left;
+     padding: 20px;
+    
+ }
+
+ .newsH{
+     text-align: center;
+     color:  #05668D;
+ }
+
+ footer{
+     height: 400px;
+     padding-left: 10px;
+     width: 100%;
+     box-sizing: border-box;
+ }
+
+ .foot1{
+     height: 130px;
+     width: 100%;
+     box-sizing: border-box;
+     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+     border-bottom: 1px solid #9d9d9d;
+     color: #a5be00;
+     text-align: center;
+     padding: 15px;
+ }
+
+ .foot2{
+       font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+       color: #679436;
+       height: 170px;
+       width: 100%;
+ }
+ .Bammy-slogan{
+     font-weight: bold;
+     font-size: 20px;
+     color: #679436;
+ }
+
+ .hr3{
+     width: 100px;
+     height: 1px;
+     background-color: #184115;
+     float: left;
+ }
+
+ .sub-input{
+     width: 250px;
+     height: 26px;
+     border: 1px solid #9d9d9d;
+     border-top-left-radius: 20px;
+     border-bottom-left-radius: 20px;
+    padding: 5px;
+ }
+
+ .sub-input:focus{
+     outline-color: transparent;
+ }
+
+ .subP{
+     background-color: #184115;
+     color: #fff;
+     height: 28px;
+     width: 100px;
+     position: relative;
+     bottom: 16px;
+     padding: 5px;
+     border-top-right-radius: 20px;
+     border-bottom-right-radius: 20px;
+     display: flex;
+     align-items: center;
+ }
+
+ .subC1{
+     display: flex;
+ }
+ .subC{
+     display: flex;
+     justify-content: space-between;
+     padding-right: 15px;
+ }
+
+ .nav-overlay{
+    
+     background-color: #fff;
+     position: fixed;
+     display: none;
+     z-index: 1;
+     width: 100vw;
+     height: 100vh;
+     list-style-type: none;
+     margin: 0;
+     text-align: center;
+     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      font-size: 20px;
+ }
+
+ .menu{
+       font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+       font-size: 25px;
+       color: #F3AF57;
+       display: none;
+ }
+
+ .menu:hover{
+      color: #BBA24E;
+ }
+
+ .back{
+       font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+       font-size: 25px;
+       color: #F3AF57;
+       padding-bottom: 30px;
+ }
+
+ .back:hover{
+      color: #BBA24E;
+ }
+ .nav-overlay > li {
+    padding: 20px;
+ }
+
+
+ .wassa{
+     display: block !important;
+ }
+ .newImg{
+    max-width:100%;
+       
+}
+ @media (max-width:800px) {
+      
+            
+        header > .social-media-nav > .ul1{
+            list-style-type: none;
+            padding: 5px;
+            margin: 0;
+            display: flex;
+            flex-flow: column;
+            justify-content: space-around;
+            width: 65vw;
+        }
+
+        header > .social-media-nav{
+            height: 60px;
+            max-width: 97.5%;
+        }
+
+        .nav-side{
+            display: none;
+        }
+        .nav-bar{
+            padding: 20px;
+        }
+        .brandName{
+            padding-left: 10px;
+        }
+        .jumboText{
+            text-align: center;
+        }
+        .premium{
+            height: 70vh;
+        }
+        .news-container{
+             grid-auto-flow: row;
+             height: 210%;
+             padding: 0;
+        }
+        .news{
+            height: 500px;
+            width: 60%;
+            margin-bottom: 2%;
+        }
+    
+        .menu{
+            display: block;
+        }
+        .foot1{
+            height: 160px;
+        }
+     
+
+ }
+
+ @media (max-width:500px) {
+  
+     .news{
+        height: 530px;  
+      }
+
+ }
+
+  @media (max-width:435px) {
+      
+        header > .social-media-nav{
+            height: 80px;
+        }
+
+        .news{
+            height: 530px;
+            width: 60%;
+        }
+
+        .subC{
+            flex-direction: column;
+        }
+
+        header > .social-media-nav{
+            height: 130px;
+            flex-flow: column;
+            width: 96.9%;
+        }
+
+  }
+
+  @media (max-width:600px) {
+
+    .subC{
+            flex-direction: column;
+            align-items: center;
+        }
+
+  }
