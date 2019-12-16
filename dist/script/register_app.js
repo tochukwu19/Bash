@@ -1,8 +1,21 @@
 const siblingsData = document.querySelector('.siblings');
+
 const numberOfSiblings = document.getElementById('number-of-siblings');
+
 const yesRadio = document.getElementById('yes_radio');
+
 const noRadio = document.getElementById('no_radio');
+
 const defectsList = document.getElementById('defects_list');
+
+const mobileNav = document.getElementById('mobile-nav');
+
+const mask = document.getElementById('mask');
+
+const backBtn = document.getElementById('back-btn');
+
+const hamburger = document.querySelector('.hamburger');
+
 const siblingInfoString = `<div class="siblings-data">
     <h3 class="title__subtitle">Siblings Data</h3>
     <hr class="underline">
@@ -44,3 +57,17 @@ numberOfSiblings.addEventListener('change', () => {
 });
 
 
+hamburger.addEventListener('click', () => {
+    mobileNav.style.display= 'block';
+    mask.style.display = 'block';
+});
+
+backBtn.addEventListener('click', () =>{
+    mask.style.display = 'none';
+    mobileNav.style.display = 'none';
+});
+
+mask.addEventListener('click', () => {
+    mask.style.display = 'none';
+    mobileNav.style.display = 'none';
+});
