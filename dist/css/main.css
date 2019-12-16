@@ -10,7 +10,7 @@ body{
 header > .social-media-nav{
     width: 100%;
     height: 45px;
-    background-color: #043302;
+    background-color: #05668D;
     color: #fff;
     padding: 6px;
     display: flex;
@@ -194,8 +194,9 @@ header > .social-media-nav > .ul2{
  .news{
      height: 500px;
      width: 65%;
-     background-color: #9D9D9D;
-     color: #184115;
+     line-height: 1.5;
+     color: #427AA1;
+     border: 1px solid #05668D;
      border-radius: 10px;
       font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
      text-align: left;
@@ -205,6 +206,7 @@ header > .social-media-nav > .ul2{
 
  .newsH{
      text-align: center;
+     color:  #05668D;
  }
 
  footer{
@@ -220,21 +222,21 @@ header > .social-media-nav > .ul2{
      box-sizing: border-box;
      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
      border-bottom: 2px solid #9d9d9d;
-     color: #184115;
+     color: #a5be00;
      text-align: center;
      padding: 15px;
  }
 
  .foot2{
        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-       color: #184115;
+       color: #679436;
        height: 170px;
        width: 100%;
-       padding: 10px;
  }
  .Bammy-slogan{
      font-weight: bold;
      font-size: 20px;
+     color: #679436;
  }
 
  .hr3{
@@ -314,10 +316,26 @@ header > .social-media-nav > .ul2{
     padding: 20px;
  }
 
+ .foot2{
+     padding-left: 10px;
+
+      }
+
  .wassa{
      display: block !important;
  }
+ .newImg{
+    height: 200px;
+    width: 250px;
+       
+}
  @media (max-width:800px) {
+        .newImg{
+            
+          height: 200px;
+          width: 300px;
+            
+        }
             
         header > .social-media-nav > .ul1{
             list-style-type: none;
@@ -331,6 +349,7 @@ header > .social-media-nav > .ul2{
 
         header > .social-media-nav{
             height: 60px;
+            width: 98.5%;
         }
 
         .nav-side{
@@ -350,18 +369,23 @@ header > .social-media-nav > .ul2{
         }
         .news-container{
              grid-auto-flow: row;
-             height: 270vh;
+             height: 280vh;
+             padding: 0;
         }
         .news{
-            height: 400px;
-            width: 40%;
-            margin-bottom: 6%;
+            height: 500px;
+            width: 60%;
+            margin-bottom: 2%;
         }
+    
         .menu{
             display: block;
         }
         .foot1{
             height: 160px;
+        }
+        .foot2{
+            padding-left: 10px;
         }
 
  }
@@ -378,6 +402,20 @@ header > .social-media-nav > .ul2{
         }
 
         .subC{
+            flex-direction: column;
+        }
+
+        header > .social-media-nav{
+            height: 130px;
+            flex-flow: column;
+            width: 96.9%;
+        }
+
+  }
+
+  @media (max-width:600px) {
+
+    .subC{
             flex-direction: column;
         }
 
