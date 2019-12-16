@@ -25,6 +25,7 @@ def application():
 		tel = request.json['tel']
 		email = request.json['email']
 		family = request.json['family']
+		etel = request.json['Etel']
 		siblings = reuest.json['siblings']
 		
 		# fetch student data
@@ -39,9 +40,26 @@ def application():
 		school_address = request.json['school_address']
 		class_ = request.json['class_']
 		year = request.json['year']
+		sex = request.json['sex']
+		ail = srequest.json['ail']
 
 		# fetch sibling data
 		s_name = request.json['s_name']
 		s_class = request.json['s_class']
 		s_year = request.json['s_year']
 
+		# create parent object
+		parent = Parent(pname=pname,raddress=raddress,oaddress=oaddress,tel=tel,email=email,family=family,etel=etel,siblings=siblings)
+
+		# Student object
+		student = Student(sname=sname,dob=dob,bg=bg,bp=bp,state=state,gen=gen,lga=lga,sex=sex,ail=ail,school=school,school_address=school_address,class_=class_,year=year)
+
+		# Sibling object
+		sibling = Sibling(s_name=s_name,s_class_=s_class,s_year=s_year)
+
+		db.session.add_all([parent,student,sibling])
+
+		db.commit()
+
+		# parse data
+		return jsonify([parent_schema.dump(parent),student_schema.dump(student),sibling_schema.dump(sibling)])

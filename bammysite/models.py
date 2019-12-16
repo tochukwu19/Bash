@@ -11,7 +11,8 @@ class Parent(db.Model):
 	tel = db.Column(db.String(100))
 	email = db.Column(db.String(100))
 	family = db.Column(db.String(100))
-	siblings = db.Column(db.Integer)
+	siblings = db.Column(db.String(50))
+	etel = db.Column(db.String(50))
 
 	#relationship
 	children = db.relationship('Siblings','Student',backref='parent')
@@ -23,12 +24,14 @@ class Student(db.Model):
 	__tablename__ = 'Student'
 	id = db.Column(db.Integer,nullable=False,primary_key=True)
 	sname = db.Column(db.String(100))	
-	dob = db.Column(db.String(200))
+	dob = db.Column(db.String(100))
 	bg = db.Column(db.String(100))
 	bp = db.Column(db.String(100))
 	state = db.Column(db.String(50))
 	gen = db.Column(db.String(50))
 	lga = db.Column(db.String(50))
+	sex = db.Column(db.String(10))
+	ail = db.Column(db.String(10))
 
 	school = db.Column(db.Text(200))
 	school_address = db.Column(db.String(200))
@@ -48,7 +51,7 @@ class Siblings(db.Model):
 # Parent's Serialization Schema
 class ParentSchema(ma.Schema):
 	class Meta:
-		fields = ('id','name','email','tel','family','siblings','oaddress','raddress')
+		fields = ('id','name','email','etel','tel','family','siblings','oaddress','raddress')
 
 parent_schema = ParentSchema()
 parents_schema = ParentSchema(many=True)
@@ -56,7 +59,7 @@ parents_schema = ParentSchema(many=True)
 # Student's Serialization Schema
 class StudentSchema(ma.Schema):
 	class Meta:
-		fields = ('id','name','dob','bg','bp','state','gen','lga','school','school_address','class_','year','parentid')
+		fields = ('id','name','dob','bg','bp','sex','ail','state','gen','lga','school','school_address','class_','year','parentid')
 
 student_schema = StudentSchema()
 students_schema = StudentSchema(many=True)
