@@ -156,6 +156,10 @@ header > .social-media-nav > .ul2{
      text-align: center;
  }
 
+ hr{
+     border: none;
+ }
+
  .hr1{
      width: 180px;
      height: 1px;
@@ -209,10 +213,10 @@ header > .social-media-nav > .ul2{
  }
 
  footer{
-     height: 300px;
+     height: 400px;
+     padding-left: 10px;
      width: 100%;
      box-sizing: border-box;
-     border-top: 2px solid #9d9d9d;
  }
 
  .foot1{
@@ -220,7 +224,7 @@ header > .social-media-nav > .ul2{
      width: 100%;
      box-sizing: border-box;
      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-     border-bottom: 2px solid #9d9d9d;
+     border-bottom: 1px solid #9d9d9d;
      color: #a5be00;
      text-align: center;
      padding: 15px;
@@ -254,16 +258,22 @@ header > .social-media-nav > .ul2{
     padding: 5px;
  }
 
+ .sub-input:focus{
+     outline-color: transparent;
+ }
+
  .subP{
      background-color: #184115;
      color: #fff;
-     height: 27px;
+     height: 28px;
      width: 100px;
      position: relative;
-     bottom: 14.5px;
+     bottom: 16px;
      padding: 5px;
      border-top-right-radius: 20px;
      border-bottom-right-radius: 20px;
+     display: flex;
+     align-items: center;
  }
 
  .subC1{
@@ -315,10 +325,6 @@ header > .social-media-nav > .ul2{
     padding: 20px;
  }
 
- .foot2{
-     padding-left: 10px;
-
-      }
 
  .wassa{
      display: block !important;
@@ -328,11 +334,7 @@ header > .social-media-nav > .ul2{
        
 }
  @media (max-width:800px) {
-        .newImg{
-            
       
-            
-        }
             
         header > .social-media-nav > .ul1{
             list-style-type: none;
@@ -346,7 +348,7 @@ header > .social-media-nav > .ul2{
 
         header > .social-media-nav{
             height: 60px;
-            width: 98.5%;
+            max-width: 97.5%;
         }
 
         .nav-side{
@@ -381,15 +383,12 @@ header > .social-media-nav > .ul2{
         .foot1{
             height: 160px;
         }
-        .foot2{
-            padding-left: 10px;
-        }
+     
 
  }
 
  @media (max-width:500px) {
-     .newImg{
-     }
+  
      .news{
         height: 530px;  
       }
@@ -423,6 +422,7 @@ header > .social-media-nav > .ul2{
 
     .subC{
             flex-direction: column;
+            align-items: center;
         }
 
   }
