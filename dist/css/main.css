@@ -122,7 +122,7 @@ header > .social-media-nav > .ul2{
 .nav-side > li:hover{
     color: #BBA24E;
     cursor:pointer;
-    background: transparent;
+    background: white;
     border:#333 solid 1px;
     font-weight: bolder;
     transform: scaleY(1.2);
@@ -148,7 +148,7 @@ header > .social-media-nav > .ul2{
 .brandName{
     font-size: 25px;
     font-weight: bolder;
-    color:#333;
+    color:#f4f4f4;
 }
 
 .jumboText{
