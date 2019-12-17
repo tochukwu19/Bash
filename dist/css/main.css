@@ -1,9 +1,18 @@
+@font-face{
+    font-family:'Montserrat';
+    src: url(./fonts/Montserrat/Montserrat-Regular.ttf);
+}
+
+*{
+    font-family: 'Montserrat',sans-serif;
+}
+
 body{
     background-color:#f3f3f3;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Courier New', Courier, monospace;
+    /*font-family: 'Courier New', Courier, monospace;*/
     overflow-x: hidden;
 }
 
@@ -94,12 +103,27 @@ header > .social-media-nav > .ul2{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    
+}
+
+.nav-side > li {
+    font-weight:200;
+    color:black;
+    font-size:60%;
+    color:#fff;
+    background:#333;
+    padding:0.7em 1em;
+    border:none;
+    border-radius: 10px;
+
 }
 
 
 .nav-side > li:hover{
-    color: #BBA24E;
+    color: black;
+    cursor:pointer;
+    background: transparent;
+    border:#333 solid 1px;
+    font-weight: bolder;
 }
 .nav-overlay > li:hover{
     color: #BBA24E;
@@ -120,7 +144,9 @@ header > .social-media-nav > .ul2{
 }
 
 .brandName{
-    font-size: 30px;
+    font-size: 25px;
+    font-weight: bolder;
+    color:#333;
 }
 
 .jumboText{
@@ -148,6 +174,7 @@ header > .social-media-nav > .ul2{
      font-size: 16px;
      background-color: #11711E;
      color: #fff;
+     text-decoration: none;
      display: flex;
      align-items: center;
      justify-content: center;
@@ -155,7 +182,13 @@ header > .social-media-nav > .ul2{
      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
      text-align: center;
  }
-
+ 
+ .Reg:hover{
+    transform: scale(1.1);
+    background-color: #eee;
+    color: #11711E;
+    border: 1px solid #11711E;
+ }
  hr{
      border: none;
  }
