@@ -20,16 +20,16 @@ const siblingInfoString = `<div class="siblings-data">
     <h3 class="title__subtitle">Siblings Data</h3>
     <hr class="underline">
     <div class="siblings-input">
-        <label for="s_name">Full Name:</label>
-        <input type="text" name="S_name" id="S_name">
+        <label for="S_name">Full Name:</label>
+        <input type="text" name="S_name" class="S_name">
     </div>
     <div class="siblings-input">
-        <label for="s_class">Class:</label>
-        <input type="text" name="S_class" id="S_class">
+        <label for="S_class">Class:</label>
+        <input type="text" name="S_class" class="S_class">
     </div>
     <div class="siblings-input">
-        <label for="s_year">Year:</label>
-        <input type="text" name="S_year" id="S_year">
+        <label for="S_year">Year:</label>
+        <input type="text" name="S_year" class="S_year">
     </div>
     <hr>
     </div>`;
@@ -71,3 +71,4 @@ mask.addEventListener('click', () => {
     mask.style.display = 'none';
     mobileNav.style.display = 'none';
 });
+
