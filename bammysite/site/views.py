@@ -81,7 +81,7 @@ def send_email(subject, sender, recipients, text_body, html_body):
 	#return msg
 
 '''@sitemod.route('/send_newsletter')
-def send_newsletter():'''
+def send_newsletter():
 
 # Newsletter
 @sitemod.route('/news_signup',methods=['GET','POST'])
