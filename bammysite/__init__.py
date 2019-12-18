@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 from flask_migrate import Migrate,MigrateCommand
 from flask_script import Manager
+from flask_mail import Mail
 import os
 
 app = Flask(__name__)
@@ -22,6 +23,9 @@ db = SQLAlchemy(app)
 
 # Init Marshmallow
 ma = Marshmallow(app)
+
+# Init flask-mail
+mail = Mail(app)
 
 # import blueprint
 from bammysite.site.views import sitemod

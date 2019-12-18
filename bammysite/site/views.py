@@ -1,7 +1,8 @@
 from flask import Blueprint, render_template, url_for, request,g,redirect,flash,session,json
-from bammysite import db, ma,app
+from bammysite import app,db,ma,mail
 from bammysite.models import  Parent,Student,Siblings,parent_schema,parents_schema,student_schema,students_schema,sibling_schema,siblings_schema
 import os
+from flask_mail import Message
 
 sitemod = Blueprint('site', __name__, template_folder='templates')
 
@@ -14,7 +15,22 @@ def before_request():
 		g.user = session['user']'''
 
 
-# High school application
+# send email
+def send_email(subject, sender, recipients, text_body, html_body):
+	msg = Message(subject, sender=sender, recipients=recipients)
+	msg.body = text_body
+	msg.html = html_body
+	mail.send(msg)
+
+# Newsletter
+@sitemod.route('/new_signup',methods=['GET','POST'])
+def news_signup():
+	name = request.name['name']
+	email = request.form['email']
+
+	
+
+# application
 @sitemod.route('/application',methods=['GET','POST'])
 def application():
 	if request.method == 'POST':
@@ -62,4 +78,4 @@ def application():
 		db.commit()
 
 		# parse data
-		return jsonify([parent_schema.dump(parent),student_schema.dump(student),sibling_schema.dump(sibling)])
+		return render_template("pay.html")
