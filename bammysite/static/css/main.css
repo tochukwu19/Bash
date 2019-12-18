@@ -1,6 +1,6 @@
 @font-face{
     font-family:'Montserrat';
-    src: url(./fonts/Montserrat/Montserrat-Regular.ttf);
+    src: url(../fonts/Montserrat/Montserrat-Regular.ttf);
 }
 
 *{
@@ -72,7 +72,7 @@ header > .social-media-nav > .ul2{
     height: 50vh;
     padding: 15px;
     box-sizing: border-box;
-    background-image: url("/img/DSC_0538.JPG") !important;
+    background-image: url("../img/DSC_0538.JPG") !important;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -181,7 +181,6 @@ header > .social-media-nav > .ul2{
      border-radius: 30px;
      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
      text-align: center;
-     text-decoration: none;
  }
  
  .Reg:hover{
@@ -246,13 +245,6 @@ header > .social-media-nav > .ul2{
      color:  #05668D;
  }
 
- .msg{
-    padding:0 !important;
-    margin: 0 !important;
-    min-height: 5px;
-    width: 100%;
- }
-
  footer{
      height: 400px;
      padding-left: 10px;
@@ -294,9 +286,10 @@ header > .social-media-nav > .ul2{
      width: 250px;
      height: 26px;
      border: 1px solid #9d9d9d;
-     border-top-left-radius: 20px;
-     border-bottom-left-radius: 20px;
-    padding: 5px;
+     border-radius: 10px;
+     border: none;
+     padding: 5px;
+     margin-left:10px;
  }
 
  .sub-input:focus{
@@ -306,15 +299,14 @@ header > .social-media-nav > .ul2{
  .subP{
      background-color: #184115;
      color: #fff;
-     height: 28px;
+     height: 35px;
      width: 100px;
      position: relative;
-     bottom: 16px;
      padding: 5px;
-     border-top-right-radius: 20px;
-     border-bottom-right-radius: 20px;
+     border-radius: 10px;
      display: flex;
      align-items: center;
+     margin-left:5%;
  }
 
  .subC1{

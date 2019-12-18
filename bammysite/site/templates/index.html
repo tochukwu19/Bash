@@ -1,5 +1,3 @@
-{% extends "_messages.html" %}
-{% block body %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,13 +7,14 @@
     <title>Bammy College</title>
     <link rel="stylesheet" href="{{url_for('static',filename='font-awesome-4.7.0/css/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
-    <link rel="icon" href="{{url_for('static',filename='img/BAMMY LOGO (1).ico')}}">
+    <link rel="icon" href="{{url_for('static',filename='img/bammyLOGO_register.ico')}}">
 </head>
 <body>
+    {% if msg %}
+        <p class="msg">{{ msg }}</p>
+    {% endif %}
     <header>
-        {% if msg %}
-            <p class="msg"><strong>Error:</strong> {{ msg }}
-        {% endif %}
+        
         <div class="nav-overlay">
                 <p class="back">BACK</p>
             <li class="active">HOME</li>
@@ -31,17 +30,17 @@
                 <li><i class="fa fa-clock-o" aria-hidden="true"> </i>School hours: 8:00AM - 3:30PM</li>
             </ul>
             <ul class="ul2">
-                <li><img src="img/facebook.png" alt=""></li>
-                <li><img src="img/instagram.png" alt=""></li>
-                <li><img src="img/twitter.png" alt=""></li>
-                <li><img src="img/whatsapp.png" alt=""></li>
+                <li><img src="{{url_for('static',filename='img/facebook.png')}}" alt=""></li>
+                <li><img src="{{url_for('static',filename='img/instagram.png')}}" alt=""></li>
+                <li><img src="{{url_for('static',filename='img/twitter.png')}}" alt=""></li>
+                <li><img src="{{url_for('static',filename='img/whatsapp.png')}}" alt=""></li>
             </ul>
         </div>
     </header>
     <section class="premium" >
         <nav class="nav-bar">
             <div class="logo-side">
-                <div class="logoContainer"><img class="logo" src="./img/BAMMY LOGO.jpg" alt="school-logo"></div>
+                <div class="logoContainer"><img class="logo" src="/static/img/BAMMY%20LOGO.jpg" alt="school-logo"></div>
                 <div class="brandName">
                     BAMMY COLLEGE
                 </div>
@@ -59,7 +58,7 @@
         </nav>
         <div class="jumboText">
             <p>Premium Education is just a click away</p>
-            <a class="Reg" href="register_index.html">Register with us</a>
+            <a class="Reg" href="{{url_for('site.register')}}">Register with us</a>
         </div>
     </section>
 
@@ -71,19 +70,19 @@
             <div class="news">
                 <h2 class="newsH">OPEN DAY</h2>
                 <div class="newsImgContainer">
-                    <img class="newImg" src="./img/DSC_0525.JPG" alt="news-Image">
+                    <img class="newImg" src="{{url_for('static',filename='img/DSC_0525.JPG')}}" alt="news-Image">
                 </div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed libero lectus, vestibulum sollicitudin malesuada dignissim,
                 ultricies efficitur lacus. Curabitur nec nisi nec nisl finibus fermentum. Praesent ac dui ac justo hendrerit imperdiet.
                 Integer consequat, quam eget ornare ultricie.</p>
             </div>
             <div class="news"><h2 class="newsH">NEW PREFECTS</h2>
-                <div class="newsImgContainer"><img class="newImg" src="./img/DSC_0538.JPG" alt="news-Image"></div>
+                <div class="newsImgContainer"><img class="newImg" src="{{url_for('static',filename='img/DSC_0538.JPG')}}" alt="news-Image"></div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed libero lectus, vestibulum sollicitudin malesuada
                 dignissim,
                 ultricies efficitur lacus. Curabitur nec nisi </p></div>
             <div class="news"><h2 class="newsH">SECOND TERM <br> EXAMINATION</h2>
-                <div class="newsImgContainer"><img class="newImg" src="./img/DSC_0546.JPG" alt="news-Image"></div>
+                <div class="newsImgContainer"><img class="newImg" src="{{url_for('static',filename='img/DSC_0546.JPG')}}" alt="news-Image"></div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed libero lectus, vestibulum sollicitudin malesuada
                 dignissim,
                 ultricies efficitur lacus. Curabitur nec nisi nec nisl finibus fermentum. Praesent ac dui ac justo hendrerit
@@ -98,22 +97,27 @@
                 <hr class="hr5">
                 <hr class="hr4">
         </div>
-        <form class="foot2" action=''>
+        <div class="foot2">
             <p class="Bammy-slogan">Subscribe To Our Newsletter</p>
             <hr class="hr3"><br>
             <div class="subC">
                 <p class="sub-text">Don't miss out on any of our events!</p>
                 <div class="subC1">
-                <input class="sub-input" placeholder="Enter your email address" >
-                <input class="sub-input" placeholder="Fullname" >
-                <div class="labelC">
-                    <button type="submit" class="subP">Subscribe</button>
-                </div>
+                <form action="news_signup" method="POST">
+                    <input class="sub-input" placeholder="  Enter your email address" name="email">
+                    <input class="sub-input" placeholder="  Fullname" name="name">
+                    <div class="labelC">
+                        <button type="submit" class="subP">Subscribe</button>
+                    </div>
+                </form>
             </div>
             </div>
-        </form>
+        </div>
        
     </footer>
-    <script src="./script/app.js"></script>
+    <script src="{{url_for('static',filename='script/app.js')}}"></script>
+</body>
+</html>
+
 </body>
 </html>

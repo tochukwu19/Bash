@@ -15,8 +15,9 @@ class Parent(db.Model):
 	etel = db.Column(db.String(50))
 
 	#relationship
-	children = db.relationship('Siblings','Student',backref='parent')
-	subscriber = db.relationship('Subscriber',backref='parent')
+	student = db.relationship('Student',backref='stud_parent')
+	siblings = db.relationship('Siblings',backref='sib_parent')
+	subscriber = db.relationship('subscriber',backref='sub_parent')
 # Model below describes prospective student's data
 
 class Student(db.Model):
@@ -53,8 +54,8 @@ class Siblings(db.Model):
 class subscriber(db.Model):
 	__tablename__ = 'Subscriber'
 	id = id = db.Column(db.Integer,nullable=False,primary_key=True)
-	name = db.Column(db.String(100))
-	email = db.Column(db.String(100))
+	sub_name = db.Column(db.String(100))
+	sub_email = db.Column(db.String(100))
 	parentid = db.Column(db.Integer,db.ForeignKey('Parent.id'))
 
 # Parent's Serialization Schema

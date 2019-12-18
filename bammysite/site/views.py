@@ -1,6 +1,6 @@
 from flask import Blueprint, flash, render_template, url_for, request,g,redirect,flash,session,json
 from bammysite import app,db,ma,mail
-from bammysite.models import  Parent,Student,Siblings,parent_schema,parents_schema,student_schema,students_schema,sibling_schema,siblings_schema
+from bammysite.models import  Parent,Student,Siblings,subscriber,parent_schema,parents_schema,student_schema,students_schema,sibling_schema,siblings_schema
 import os
 from flask_mail import Message
 
@@ -14,27 +14,14 @@ def before_request():
 	if 'user' in session:
 		g.user = session['user']'''
 
-
-# send email
-def send_email(subject, sender, recipients, text_body, html_body):
-	msg = Message(subject, sender=sender, recipients=recipients)
-	msg.body = text_body
-	msg.html = html_body
-	mail.send(msg)
-
-# Newsletter
-@sitemod.route('/new_signup',methods=['GET','POST'])
-def news_signup():
-	name = request.name['name']
-	email = request.form['email']
-
-	msg = "Congrats you've successfully registered on our mailing list"
-
-	return render_template('index.html',msg=msg)
+@sitemod.route('/')
+@sitemod.route('/index')
+def index():
+	return render_template('index.html')
 
 # application
-@sitemod.route('/application',methods=['GET','POST'])
-def application():
+@sitemod.route('/register',methods=['GET','POST'])
+def register():
 	if request.method == 'POST':
 		# fetch parent-data from form
 		pname = request.json['name']
@@ -81,3 +68,44 @@ def application():
 
 		# parse data
 		return render_template("pay.html")
+	return render_template('register_index.html')
+
+
+# send email
+def send_email(subject, sender, recipients, text_body, html_body):
+	msg = Message(subject, sender=sender, recipients=recipients)
+	msg.body = text_body
+	msg.html = html_body
+	mail.send(msg)
+
+	#return msg
+
+'''@sitemod.route('/send_newsletter')
+def send_newsletter():'''
+
+# Newsletter
+@sitemod.route('/news_signup',methods=['GET','POST'])
+def news_signup():
+	if request.method == 'POST':
+		name = request.form['name']
+		email = request.form['email']
+		new_subscriber = subscriber(sub_name=name,sub_email=email)
+		db.session.add(new_subscriber)
+		db.session.commit()
+
+		# find parent with same details
+		user = Parent.query.filter_by(email=email).first()
+		if user != None:
+			new_subscriber.parentid = user.id
+			db.session.commit()
+		else:
+			try:
+				user = Parent.query.filter_by(pname=name).first()
+				new_subscriber.parentid = user.id
+			except AttributeError:
+				pass
+
+		msg = "Congrats you've successfully registered on our mailing list"
+
+		return render_template('index.html',msg=msg)
+	return render_template('index.html')

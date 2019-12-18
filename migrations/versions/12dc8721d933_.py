@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 8119510851f6
+Revision ID: 12dc8721d933
 Revises: 
-Create Date: 2019-12-18 12:13:20.095426
+Create Date: 2019-12-18 16:27:44.951372
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '8119510851f6'
+revision = '12dc8721d933'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -26,7 +26,6 @@ def upgrade():
     sa.Column('tel', sa.String(length=100), nullable=True),
     sa.Column('email', sa.String(length=100), nullable=True),
     sa.Column('family', sa.String(length=100), nullable=True),
-    sa.Column('siblings', sa.String(length=50), nullable=True),
     sa.Column('etel', sa.String(length=50), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
@@ -60,8 +59,8 @@ def upgrade():
     )
     op.create_table('Subscriber',
     sa.Column('id', sa.Integer(), nullable=False),
-    sa.Column('name', sa.String(length=100), nullable=True),
-    sa.Column('email', sa.String(length=100), nullable=True),
+    sa.Column('sub_name', sa.String(length=100), nullable=True),
+    sa.Column('sub_email', sa.String(length=100), nullable=True),
     sa.Column('parentid', sa.Integer(), nullable=True),
     sa.ForeignKeyConstraint(['parentid'], ['Parent.id'], ),
     sa.PrimaryKeyConstraint('id')
