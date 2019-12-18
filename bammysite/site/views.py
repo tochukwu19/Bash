@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, url_for, request,g,redirect,flash,session,json
+from flask import Blueprint, flash, render_template, url_for, request,g,redirect,flash,session,json
 from bammysite import app,db,ma,mail
 from bammysite.models import  Parent,Student,Siblings,parent_schema,parents_schema,student_schema,students_schema,sibling_schema,siblings_schema
 import os
@@ -28,7 +28,9 @@ def news_signup():
 	name = request.name['name']
 	email = request.form['email']
 
-	
+	msg = "Congrats you've successfully registered on our mailing list"
+
+	return render_template('index.html')
 
 # application
 @sitemod.route('/application',methods=['GET','POST'])
