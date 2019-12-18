@@ -4,7 +4,7 @@
 }
 
 *{
-    font-family: 'Montserrat',sans-serif !important;
+    font-family: 'Montserrat',sans-serif;
 }
 
 body{
@@ -174,6 +174,7 @@ header > .social-media-nav > .ul2{
      font-size: 16px;
      background-color: #11711E;
      color: #fff;
+     text-decoration: none;
      display: flex;
      align-items: center;
      justify-content: center;
@@ -182,7 +183,13 @@ header > .social-media-nav > .ul2{
      text-align: center;
      text-decoration: none;
  }
-
+ 
+ .Reg:hover{
+    transform: scale(1.1);
+    background-color: #eee;
+    color: #11711E;
+    border: 1px solid #11711E;
+ }
  hr{
      border: none;
  }
