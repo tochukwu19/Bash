@@ -180,6 +180,7 @@ header > .social-media-nav > .ul2{
      border-radius: 30px;
      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
      text-align: center;
+     text-decoration: none;
  }
 
  hr{
