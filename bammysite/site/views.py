@@ -30,7 +30,7 @@ def news_signup():
 
 	msg = "Congrats you've successfully registered on our mailing list"
 
-	return render_template('index.html')
+	return render_template('index.html',msg=msg)
 
 # application
 @sitemod.route('/application',methods=['GET','POST'])
