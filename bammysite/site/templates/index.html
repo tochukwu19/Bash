@@ -1,0 +1,119 @@
+{% extends "_messages.html" %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bammy College</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='font-awesome-4.7.0/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+    <link rel="icon" href="{{url_for('static',filename='img/BAMMY LOGO (1).ico')}}">
+</head>
+<body>
+    <header>
+        {% if msg %}
+            <p class="msg"><strong>Error:</strong> {{ msg }}
+        {% endif %}
+        <div class="nav-overlay">
+                <p class="back">BACK</p>
+            <li class="active">HOME</li>
+            <li>ABOUT US</li>
+            <li>PORTAL</li>
+            <li>EVENTS</li>
+            <li>GALLERY</li>
+    </div>
+        <div class="social-media-nav">
+            <ul class = "ul1">
+                <li><i class="fa fa-phone-square" aria-hidden="true"> </i>+234705644176</li>
+                <li><i class="fa fa-envelope" aria-hidden="true"> </i>bammycollege@gmail.com</li>
+                <li><i class="fa fa-clock-o" aria-hidden="true"> </i>School hours: 8:00AM - 3:30PM</li>
+            </ul>
+            <ul class="ul2">
+                <li><img src="img/facebook.png" alt=""></li>
+                <li><img src="img/instagram.png" alt=""></li>
+                <li><img src="img/twitter.png" alt=""></li>
+                <li><img src="img/whatsapp.png" alt=""></li>
+            </ul>
+        </div>
+    </header>
+    <section class="premium" >
+        <nav class="nav-bar">
+            <div class="logo-side">
+                <div class="logoContainer"><img class="logo" src="./img/BAMMY LOGO.jpg" alt="school-logo"></div>
+                <div class="brandName">
+                    BAMMY COLLEGE
+                </div>
+            </div>
+            <div class="nav-side">
+                    <li class="active">HOME</li>
+                    <li>ABOUT US</li>
+                    <li>PORTAL</li>
+                    <li>EVENTS</li>
+                    <li>GALLERY</li>
+            </div>
+            <div class="hidden-menu">
+                <p class="menu">MENU</p>
+            </div>
+        </nav>
+        <div class="jumboText">
+            <p>Premium Education is just a click away</p>
+            <a class="Reg" href="register_index.html">Register with us</a>
+        </div>
+    </section>
+
+    <section class="latest-stories">
+        <h1 class="latest">LATEST NEWS</h1>
+        <hr class="hr1">
+        <hr class="hr2">
+        <div class="news-container">
+            <div class="news">
+                <h2 class="newsH">OPEN DAY</h2>
+                <div class="newsImgContainer">
+                    <img class="newImg" src="./img/DSC_0525.JPG" alt="news-Image">
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed libero lectus, vestibulum sollicitudin malesuada dignissim,
+                ultricies efficitur lacus. Curabitur nec nisi nec nisl finibus fermentum. Praesent ac dui ac justo hendrerit imperdiet.
+                Integer consequat, quam eget ornare ultricie.</p>
+            </div>
+            <div class="news"><h2 class="newsH">NEW PREFECTS</h2>
+                <div class="newsImgContainer"><img class="newImg" src="./img/DSC_0538.JPG" alt="news-Image"></div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed libero lectus, vestibulum sollicitudin malesuada
+                dignissim,
+                ultricies efficitur lacus. Curabitur nec nisi </p></div>
+            <div class="news"><h2 class="newsH">SECOND TERM <br> EXAMINATION</h2>
+                <div class="newsImgContainer"><img class="newImg" src="./img/DSC_0546.JPG" alt="news-Image"></div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed libero lectus, vestibulum sollicitudin malesuada
+                dignissim,
+                ultricies efficitur lacus. Curabitur nec nisi nec nisl finibus fermentum. Praesent ac dui ac justo hendrerit
+                imperdiet.
+              </p></div>
+        </div>
+    </section>
+    <footer>
+        <div class="foot1">
+            <em>Avanti Terracotta</em>
+            <p class="Bammy-slogan">"Bammyy's College Is The Best Affordable School In Agbado"</p>
+                <hr class="hr5">
+                <hr class="hr4">
+        </div>
+        <form class="foot2" action=''>
+            <p class="Bammy-slogan">Subscribe To Our Newsletter</p>
+            <hr class="hr3"><br>
+            <div class="subC">
+                <p class="sub-text">Don't miss out on any of our events!</p>
+                <div class="subC1">
+                <input class="sub-input" placeholder="Enter your email address" >
+                <input class="sub-input" placeholder="Fullname" >
+                <div class="labelC">
+                    <button type="submit" class="subP">Subscribe</button>
+                </div>
+            </div>
+            </div>
+        </form>
+       
+    </footer>
+    <script src="./script/app.js"></script>
+</body>
+</html>
