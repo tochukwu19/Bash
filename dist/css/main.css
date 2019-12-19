@@ -1,108 +1,86 @@
-/* @font-face{
-    font-family:'Montserrat';
-    src: url(./fonts/Montserrat/Montserrat-Regular.ttf);
-} */
-
+/* Global Styles */
 *{
-    padding: 0;
-    margin: 0;
+    font-family: 'Montserrat',sans-serif;
 }
 
 body{
     background-color:#f3f3f3;
-    font-family: Montserrat;
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
-    /*font-family: 'Courier New', Courier, monospace;*/
     overflow-x: hidden;
 }
 
-.main-nav {
+.fa,.fab{
+    padding-right: 4px;
+    color: white;
+}
+
+
+
+/* NavBar & Menus */
+header > .social-media-nav{
+    width: 100%;
+    height: 45px;
     background-color: #679436;
+    color: #fff;
+    padding: 6px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.contact-info {
-    flex: 1;
-    padding-left: 5%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-}
-.social-media {
-    flex: 0.5;
-    padding-left: 1%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-}
-.contact-info li,
-.social-media li {
-    display: inline-block;
-    padding-right: 4%;
-    color: white;
-}
-.fa {
-    padding: 6px;
-}
-.social-media li .fab{
-    color: white;
-}
-.fab {
-    padding: 10px;
-}
 
 
-.sub-nav {
-    background-color: white;
+
+#logo{
+    cursor: pointer;
+}
+
+#logo img{
+    display:block;
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+}
+
+.navbar2{
+    width: 100%;
+    height: 70px;
+    background-color: #fff;
+    text-align: right;
+    color: #05668D;
+    padding: 0.3rem;
+    width: 100%;
+    vertical-align: middle;
+    box-shadow: 0 2px 5px #34383a;
     display: flex;
+    justify-content: space-around;
     align-items: center;
 }
-.school-name,
-.nav-menu {
-    flex: 1;
-}
-.school-name {
-    list-style: none;
-}
-.school-name li {
-    display: inline-block;
-}
-.nav-menu li {
-    display: inline-block;
-    padding: 3%;
-    list-style: none;
-}
-.nav-menu li a {
+
+.navbar2 li{
+    cursor: pointer;
     text-decoration: none;
-    text-transform: uppercase;
+    list-style: none;
+    display: inline-block;
     color: #679436;
-}
-.nav-menu {
-    padding-right: 8%;
-}
-.school-name {
-    padding-left: 15%;
-    font-weight: 700;
-    font-size: 1.2rem;
-    color: #679436;
+    padding: 10px;
     text-transform: uppercase;
 }
-.logo {
-    width: 50px;
-    height: 50px;
-    border: 2px solid #184115;
-    border-radius: 50%;
-}
-.logo-container {
-    padding: 5px;
-}
-/* 
+.navbar2 .translink :hover{
+   background: #679436;
+   color: #ffffff;
+   transform: scale(1.1);
+   transition-duration: 200ms;
+} 
+
 header > .social-media-nav > .ul1{
     list-style-type: none;
     padding: 5px;
     margin: 0;
     display: flex;
-    flex-flow: column;
     justify-content: space-around;
+    width: 65vw;
 }
 header > .social-media-nav > .ul2{
     list-style-type: none;
@@ -110,263 +88,10 @@ header > .social-media-nav > .ul2{
     margin: 0;
     display: flex;
     justify-content: space-around;
-} */
-
-
-
-.premium{
-    width: 100%;
-    height: 50vh;
-    padding: 15px;
-    box-sizing: border-box;
-    background-image: url("../img/DSC_0538.JPG") !important;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-/* .nav-bar{
-    display: flex;
-    justify-content: space-between;
-    background-color: transparent;
-    color: #fff;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 19px;
+    width: 20vw;
 }
 
-.logo-side {
-    width: 25vw;
-    height: 87.5px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.nav-side {
-    width: 50vw;
-    height: 87.5px;
-    list-style-type: none;
-    margin: 0;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.nav-side > li {
-    font-weight:200;
-    color:black;
-    font-size:60%;
-    color:#fff;
-    background:#333;
-    padding:0.7em 1em;
-    border:none;
-    border-radius: 10px;
-
-}
-
-
-.nav-side > li:hover{
-    color: black;
-    cursor:pointer;
-    background: transparent;
-    border:#333 solid 1px;
-    font-weight: bolder;
-}
-.nav-overlay > li:hover{
-    color: #BBA24E;
-}
-
-.active{
-    color: #D4972E;
-}
-
-.logo{
-    height: 70px;
-    width: 70px;
-}
-
-.logoContainer{
-    padding-top: 15px;
-    font-size: 30px;
-}
-
-.brandName{
-    font-size: 25px;
-    font-weight: bolder;
-    color:#333;
-} */
-
-.jumboText{
-    display: grid;
-    justify-items: center;
-    padding-top: 15vh;
-    height: 100px;
-    width: 100%;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 30px;
-    font-weight: bolder;
-    color: #4D1010;
-   
- }
-
- .latest{
-    text-align: center;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 30px;
-    color: #F3AF57;
- }
-
- .Reg{
-     height: 60px;
-     width: 200px;
-     font-size: 16px;
-     background-color: #11711E;
-     color: #fff;
-     text-decoration: none;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     border-radius: 30px;
-     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-     text-align: center;
-     text-decoration: none;
- }
- 
- .Reg:hover{
-    transform: scale(1.1);
-    background-color: #eee;
-    color: #11711E;
-    border: 1px solid #11711E;
- }
- hr{
-     border: none;
- }
-
- .hr1{
-     width: 180px;
-     height: 1px;
-     background-color: #9D9D9D;
- }
-
- .hr2{
-     width: 100px;
-     height: 1px;
-     background-color: #9D9D9D;
- }
-
- .hr5{
-     width: 180px;
-     height: 1px;
-     background-color: #9D9D9D;
- }
-
- .hr4{
-     width: 100px;
-     height: 1px;
-     background-color: #9D9D9D;
- }
-
- .news-container{
-     height: 210%;
-     width: 100%;
-     box-sizing: border-box;
-     padding: 15px;
-     display: grid;
-     grid-auto-flow: column;
-     justify-content: space-around;
-     justify-items: center;
- }
-
- .news{
-     width: 65%;
-     line-height: 1.5;
-     color: #427AA1;
-     border: 1px solid #05668D;
-     border-radius: 10px;
-      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-     text-align: left;
-     padding: 20px;
-    
- }
-
- .newsH{
-     text-align: center;
-     color:  #05668D;
- }
-
- footer{
-     height: 400px;
-     padding-left: 10px;
-     width: 100%;
-     box-sizing: border-box;
- }
-
- .foot1{
-     height: 130px;
-     width: 100%;
-     box-sizing: border-box;
-     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-     border-bottom: 1px solid #9d9d9d;
-     color: #a5be00;
-     text-align: center;
-     padding: 15px;
- }
-
- .foot2{
-       font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-       color: #679436;
-       height: 170px;
-       width: 100%;
- }
- .Bammy-slogan{
-     font-weight: bold;
-     font-size: 20px;
-     color: #679436;
- }
-
- .hr3{
-     width: 100px;
-     height: 1px;
-     background-color: #184115;
-     float: left;
- }
-
- .sub-input{
-     width: 250px;
-     height: 26px;
-     border: 1px solid #9d9d9d;
-     border-top-left-radius: 20px;
-     border-bottom-left-radius: 20px;
-    padding: 5px;
- }
-
- .sub-input:focus{
-     outline-color: transparent;
- }
-
- .subP{
-     background-color: #184115;
-     color: #fff;
-     height: 28px;
-     width: 100px;
-     position: relative;
-     bottom: 16px;
-     padding: 5px;
-     border-top-right-radius: 20px;
-     border-bottom-right-radius: 20px;
-     display: flex;
-     align-items: center;
- }
-
- .subC1{
-     display: flex;
- }
- .subC{
-     display: flex;
-     justify-content: space-between;
-     padding-right: 15px;
- }
-
- .nav-overlay{
+.nav-overlay{
     
      background-color: #fff;
      position: fixed;
@@ -410,10 +135,176 @@ header > .social-media-nav > .ul2{
  .wassa{
      display: block !important;
  }
- .newImg{
+ 
+
+
+
+/* Jumbotron */
+
+
+.premium{
+    width: 100%;
+    height: 50vh;
+    box-sizing: border-box;
+    background-image: url("/dist/img/DSC_0538.JPG") !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+.brandName{
+    font-size: 25px;
+    font-weight: bolder;
+    color:#333;
+}
+
+.jumboText{
+    display: grid;
+    justify-items: center;
+    height: 100px;
+    width: 100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    font-weight: bolder;
+    color: #4D1010;
+   
+ }
+ 
+ .Reg{
+     height: 60px;
+     width: 200px;
+     font-size: 16px;
+     background-color: #679436;
+     color: #fff;
+     text-decoration: none;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     border-radius: 30px;
+     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+     text-align: center;
+ }
+ 
+ .Reg:hover{
+    transform: scale(1.1);   
+ }
+
+/* News Section */
+.latest{
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    color: #F3AF57;
+ }
+
+ .news-container{
+     height: auto;
+     width: 100%;
+     box-sizing: border-box;
+     padding: 15px;
+     display: grid;
+     grid-auto-flow: column;
+     justify-content: space-around;
+     justify-items: center;
+ }
+
+ .news{
+     width: 65%;
+     line-height: 1.5;
+     color: #679436;
+     border: 1px solid #679436;
+     border-radius: 10px;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+     text-align: left;
+     padding: 20px;
+     height: 100vh;
+    
+ }
+
+ .newsH{
+     text-align: center;
+     color: #679436;
+ }
+
+  .newImg{
     max-width:100%;
        
 }
+/* Footer */
+
+
+
+ footer{
+     width: 100%;
+     box-sizing: border-box;
+     position: relative;
+     top: 100%;
+ }
+
+ .foot1{
+     height: 130px;
+     width: 100%;
+     box-sizing: border-box;
+     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+     color: #a5be00;
+     text-align: center;
+     padding: 15px;
+ }
+
+ .foot2{
+       font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+       background-color: #679436;
+       color: #fff;
+       height: 170px;
+       width: 100%;
+       padding: 15px;
+      text-align: center;
+ }
+
+ .Bammy-slogan{
+     font-weight: bold;
+     font-size: 20px;
+ }
+ 
+
+ .subP{
+     background-color: #184115;
+     color: #fff;
+     height: 28px;
+     width: 100px;
+     position: relative;
+     bottom: 16px;
+     padding: 5px;
+     border-top-right-radius: 20px;
+     border-bottom-right-radius: 20px;
+     display: flex;
+     align-items: center;
+ }
+
+ .input-icon-wrap {
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+  width: 250px;
+}
+
+
+.input-icon, .input-with-icon {
+  padding: 10px;
+}
+
+ .subC{
+     display: flex;
+     justify-content: space-between;
+     padding-right: 15px;
+     flex-flow: column;
+     align-items: center;
+ }
+
+
+/* For Smaller Devices */
  @media (max-width:800px) {
       
             
@@ -429,15 +320,13 @@ header > .social-media-nav > .ul2{
 
         header > .social-media-nav{
             height: 60px;
-            max-width: 97.5%;
+            max-width: 100%;
         }
 
-        .nav-side{
+        .navmenu{
             display: none;
         }
-        .nav-bar{
-            padding: 20px;
-        }
+       
         .brandName{
             padding-left: 10px;
         }
