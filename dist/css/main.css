@@ -257,7 +257,7 @@ header > .social-media-nav > .ul2{
        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
        background-color: #679436;
        color: #fff;
-       height: 170px;
+       height: 250px;
        width: 100%;
        text-align: center;
        padding-top: 4px;
@@ -288,9 +288,11 @@ header > .social-media-nav > .ul2{
   display: flex;
   flex-direction: row;
   height: 40px;
-  width: 250px;
+  width: 220px;
   margin: auto;
+  margin-bottom: 10px;
 }
+
 
 
 .input-icon, .input-with-icon {
