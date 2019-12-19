@@ -123,8 +123,12 @@ header > .social-media-nav > .ul2{
  .back:hover{
       color: #BBA24E;
  }
- .nav-overlay > li {
+ .nav-overlay > li  {
     padding: 20px;
+ }
+ .nav-overlay > li > a{
+     text-decoration: none;
+     color: #000;
  }
 
 
