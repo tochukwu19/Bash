@@ -7,7 +7,6 @@ body{
     background-color:#f3f3f3;
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
     overflow-x: hidden;
 }
 
@@ -20,7 +19,6 @@ body{
 
 /* NavBar & Menus */
 header > .social-media-nav{
-    width: 100%;
     height: 45px;
     background-color: #679436;
     color: #fff;
@@ -44,13 +42,11 @@ header > .social-media-nav{
 }
 
 .navbar2{
-    width: 100%;
     height: 70px;
     background-color: #fff;
     text-align: right;
     color: #05668D;
     padding: 0.3rem;
-    width: 100%;
     vertical-align: middle;
     box-shadow: 0 2px 5px #34383a;
     display: flex;
@@ -146,7 +142,7 @@ header > .social-media-nav > .ul2{
     width: 100%;
     height: 50vh;
     box-sizing: border-box;
-    background-image: url("/dist/img/DSC_0538.JPG") !important;
+    background-image: url("/img/DSC_0538.JPG") !important;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -259,8 +255,9 @@ header > .social-media-nav > .ul2{
        color: #fff;
        height: 170px;
        width: 100%;
-       padding: 15px;
-      text-align: center;
+       text-align: center;
+       padding-top: 4px;
+
  }
 
  .Bammy-slogan{
@@ -288,6 +285,7 @@ header > .social-media-nav > .ul2{
   flex-direction: row;
   height: 40px;
   width: 250px;
+  margin: auto;
 }
 
 
@@ -296,11 +294,9 @@ header > .social-media-nav > .ul2{
 }
 
  .subC{
-     display: flex;
-     justify-content: space-between;
+  
      padding-right: 15px;
-     flex-flow: column;
-     align-items: center;
+   
  }
 
 
@@ -370,7 +366,9 @@ header > .social-media-nav > .ul2{
         header > .social-media-nav{
             height: 80px;
         }
-
+        .navbar2{
+            width: 97.5%;
+        }
         .news{
             height: 530px;
             width: 60%;
