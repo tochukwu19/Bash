@@ -6,7 +6,7 @@ const logoutBtn = document.querySelector('.logoutBtn');
 const confirmDiv = document.getElementById('confirm-logout');
 const yesLogout = document.getElementById('yes_logout');
 const noLogout = document.getElementById('no_logout');
-// const newPhotoDiv = document.querySelectorAll('new-story__input-image');
+const newPhotoDiv = document.querySelectorAll('new-story__input-image');
 const deleteImageBtn = document.querySelector('.deleteImage');
 const storyTextBox = document.getElementById('story-info');
 const storySubmit = document.querySelector('.btn-submit-story')
@@ -22,17 +22,15 @@ addPhoto.addEventListener('click', () => {
     picInput.setAttribute('name','new-story__photo');
     picInput.className = 'new-story__photo';
     newPhoto.appendChild(picInput);
-    // let deleteBtn = document.createElement('a');
-    // deleteBtn.className = 'deleteImage';
-    // deleteBtn.innerHTML = '&#10060;';
-    // deleteBtn.after(newPhoto);
-    // newPhoto.appendChild(deleteBtn);
+    let deleteBtn = document.createElement('button');
+    deleteBtn.className = 'deleteImage';
+    deleteBtn.innerHTML = '&#10060;';
+    deleteBtn.after(newPhoto);
+    newPhoto.appendChild(deleteBtn);
     photosDiv.appendChild(newPhoto);
     
 })
 
-
-// photosDiv.addEventListener('click',deleteImage);
 
 storySubmit.addEventListener('click', (e) =>{
     e.preventDefault();
@@ -63,22 +61,9 @@ noLogout.addEventListener('click', () =>{
     confirmDiv.style.display = 'none';  
 })
 
-// function deleteImage(e) {
-//     if (e.offsetX >= 302 || e.offsetX <= 311) {
-//         if (e.offsetY >= 10 || e.offsetY <= 16) {
-//             document.querySelector('.new-story__photo').parentElement.remove();
-//         }
-//     }
-//     // let i = 0;
-
-//     // while (i < photosDiv.childElementCount ) {
-//     //     if (e.target.dataset.delete) {
-//     //         deleteImageBtn.parentNode.remove()
-//     //         // document.querySelector('.new-story__photo').parentElement.remove();
-//     //     }
-        
-//     //     i++;
-//     // }
-//     // console.log(e.offsetY); 
-    
-// }
+photosDiv.addEventListener("click", (e) => {
+    if (e.target.classList.contains('deleteImage')){
+        e.preventDefault()
+        e.target.parentNode.parentNode.removeChild(e.target.parentNode)
+    }
+})
