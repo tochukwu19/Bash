@@ -14,7 +14,7 @@ const mask = document.getElementById('mask');
 
 const backBtn = document.getElementById('back-btn');
 
-const hamburger = document.querySelector('.hamburger');
+const hiddenNav = document.querySelector('.hidden-menu');
 
 const siblingInfoString = `<div class="siblings-data">
     <h3 class="title__subtitle">Siblings Data</h3>
@@ -57,7 +57,7 @@ numberOfSiblings.addEventListener('change', () => {
 });
 
 
-hamburger.addEventListener('click', () => {
+hiddenNav.addEventListener('click', () => {
     mobileNav.style.display= 'block';
     mask.style.display = 'block';
 });
