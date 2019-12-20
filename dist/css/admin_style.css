@@ -144,6 +144,7 @@ main{
     cursor: pointer;
     background: none;
     text-decoration: none;
+    border: none;
 }
 
 .new-story__input-images{
