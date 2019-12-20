@@ -17,7 +17,7 @@ main{
 }
 
 #admin-logo{
-    width: 75%;
+    width: 50%;
     height: 30vh;
     flex-direction: column;
     margin: auto;
@@ -267,7 +267,7 @@ footer{
 @media(min-width:45rem){
 
     #admin-logo{
-        width: 30%;
+        width: 25%;
         height: 30vh;
     }
 

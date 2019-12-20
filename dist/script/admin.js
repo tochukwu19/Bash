@@ -1,7 +1,7 @@
 //Selectors for all
 const addPhoto = document.getElementById('add-photo');
 const photosDiv = document.querySelector('.new-story__input-images');
-const mask =  document.querySelector('#mask');
+// const mask =  document.querySelector('#mask');
 const logoutBtn = document.querySelector('.logoutBtn');
 const confirmDiv = document.getElementById('confirm-logout');
 const yesLogout = document.getElementById('yes_logout');
