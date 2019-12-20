@@ -157,11 +157,6 @@ header > .social-media-nav > .social-details{
   z-index: 20;
 }
 
-.hidden-menu{
-    position: relative;
-    top: 5%;
-    left: 90%;
-}
 
 .brandName{
     font-size: 25px;
@@ -317,6 +312,7 @@ header > .social-media-nav > .social-details{
 
 .input-icon, .input-with-icon {
   padding: 10px;
+  border: none;
 }
 
  .sub-footer2-container{
