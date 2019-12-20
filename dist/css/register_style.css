@@ -7,7 +7,7 @@ html{
     margin: 0px;
 }
 body{
-    background: #679436;
+    background: #679436 !important;
     font-family: 'Poppins', sans-serif;
 }
 main{
@@ -84,6 +84,7 @@ main{
   border-radius: 3px;  
   transform-origin: 4px 0px; 
 }
+
 .hidden-menu{
       float: right;
       margin-top: 15px;
@@ -101,7 +102,7 @@ main{
     top: 2%;
     text-align: center;
     height: 45rem;
-    z-index: 10;
+    z-index: 50;
 }
 
 #mobile-nav li{
@@ -312,5 +313,6 @@ footer{
     }
     .hidden-menu{
         display: block;
+        cursor: pointer;
     }
 }

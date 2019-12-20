@@ -71,6 +71,7 @@ header > .social-media-nav{
 } 
 
  .hidden-menu{
+     cursor: pointer;
      display: none;
  }
 
@@ -92,29 +93,32 @@ header > .social-media-nav > .social-details{
 }
 
 .nav-overlay{
-    
-     background-color: #fff;
-     position: fixed;
-     display: none;
-     z-index: 1;
-     width: 100vw;
-     height: 100vh;
-     list-style-type: none;
-     margin: 0;
-     text-align: center;
-     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-      font-size: 20px;
+
+    background-color: #fff;
+    position: fixed;
+    display: none;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    list-style-type: none;
+    margin: 0;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    z-index: 50;
  }
 
  .menu{
-       font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-       font-size: 25px;
-       color: #F3AF57;
-       display: none;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 25px;
+    color: #F3AF57;
+    display: none;
+    
  }
 
  .menu:hover{
-      color: #BBA24E;
+    color: #BBA24E;
+    cursor: pointer;
  }
 
  .backBtn{
@@ -141,6 +145,7 @@ header > .social-media-nav > .social-details{
  }
 
  .hidden-menu span {
+
   display: block;
   width: 33px;
   height: 4px;
@@ -149,6 +154,13 @@ header > .social-media-nav > .social-details{
   background: #679436;
   border-radius: 3px;  
   transform-origin: 4px 0px; 
+  z-index: 20;
+}
+
+.hidden-menu{
+    position: relative;
+    top: 5%;
+    left: 90%;
 }
 
 .brandName{
