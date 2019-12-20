@@ -261,9 +261,25 @@ footer{
     padding: 1rem;
     color: #e7e5e5;
     background: rgba(0, 0, 0, 0.774);
-    height: 25vh;
 }
 
+.hidden-menu span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #679436;
+  border-radius: 3px;  
+  transform-origin: 4px 0px; 
+}
+
+.hidden-menu{
+      float: right;
+      margin-top: 15px;
+      display: none;
+
+}
 
 /*Media queries*/
 @media(min-width:45rem){
@@ -300,4 +316,14 @@ footer{
         margin: 1.2rem;
     }
 
+}
+
+@media(max-width:640px){
+     .navbar{
+        height: 90px;
+    }
+    .hidden-menu{
+        display: block;
+        cursor: pointer;
+    }
 }

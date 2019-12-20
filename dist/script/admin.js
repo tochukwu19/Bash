@@ -13,6 +13,8 @@ const storySubmit = document.querySelector('.btn-submit-story')
 const newsLetterTextBox = document.getElementById('newsletter-content');
 const newsLetterSubmit = document.querySelector('.btn-send-newsletter');
 
+
+
 addPhoto.addEventListener('click', () => {
     let newPhoto = document.createElement('div');
     newPhoto.className = 'new-story__input-image';
@@ -67,3 +69,4 @@ photosDiv.addEventListener("click", (e) => {
         e.target.parentNode.parentNode.removeChild(e.target.parentNode)
     }
 })
+
