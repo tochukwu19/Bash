@@ -135,6 +135,17 @@ header > .social-media-nav > .ul2{
  .wassa{
      display: block !important;
  }
+
+ .hidden-menu span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #679436;
+  border-radius: 3px;  
+  transform-origin: 4px 0px; 
+}
  
 
 
@@ -226,11 +237,17 @@ header > .social-media-nav > .ul2{
  .newsH{
      text-align: center;
      color: #679436;
- }
+     font-size: 20px;
+     font-weight: bold;
+     margin-bottom: 10px;
+ } 
 
   .newImg{
     max-width:100%;
        
+}
+.Readmore{
+    display: none;
 }
 /* Footer */
 
@@ -305,11 +322,42 @@ header > .social-media-nav > .ul2{
    
  }
 
+ .hidden-menu{
+     display: none;
+ }
+
 
 /* For Smaller Devices */
  @media (max-width:800px) {
-      
-            
+        .Readmore{
+            text-decoration: none;
+            color: #a5be00;
+            display: block;
+        }
+        .news  p{
+            padding-left: 10px;
+            font-weight: bold;
+        }
+        .newsH{
+            font-size: 22px;
+            font-weight: bold;
+        }
+     
+        .mob{
+            display: flex;
+        }
+        .hide{
+            display: none;
+        }
+        .newImg{
+            height: 100px;
+            max-width: 110px;
+            border-radius: 20px;
+        }
+        .news{
+            height: auto;
+            border: none;
+        }
         header > .social-media-nav > .ul1{
             list-style-type: none;
             padding: 5px;
@@ -328,7 +376,9 @@ header > .social-media-nav > .ul2{
         .navmenu{
             display: none;
         }
-       
+        .hidden-menu{
+            display: block;
+        }
         .brandName{
             padding-left: 10px;
         }
@@ -344,8 +394,7 @@ header > .social-media-nav > .ul2{
              padding: 0;
         }
         .news{
-            height: 500px;
-            width: 60%;
+            width: 80%;
             margin-bottom: 2%;
         }
     
@@ -355,31 +404,22 @@ header > .social-media-nav > .ul2{
         .foot1{
             height: 160px;
         }
-     
+        .navbar2{
+            justify-content: space-between;
+            padding-right: 17px;
+        }
 
  }
 
- @media (max-width:500px) {
-  
-     .news{
-        height: 530px;  
-      }
 
- }
 
   @media (max-width:435px) {
       
         header > .social-media-nav{
             height: 80px;
         }
-        .navbar2{
-            width: 97.5%;
-        }
-        .news{
-            height: 530px;
-            width: 60%;
-        }
-
+    
+    
         .subC{
             flex-direction: column;
         }
@@ -389,6 +429,7 @@ header > .social-media-nav > .ul2{
             flex-flow: column;
             width: 96.9%;
         }
+      
 
   }
 
