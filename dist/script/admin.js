@@ -12,6 +12,10 @@ const storyTextBox = document.getElementById('story-info');
 const storySubmit = document.querySelector('.btn-submit-story')
 const newsLetterTextBox = document.getElementById('newsletter-content');
 const newsLetterSubmit = document.querySelector('.btn-send-newsletter');
+const backBtn = document.getElementById('back-btn');
+const mobileNav = document.getElementById('mobile-nav');
+const hiddenNav = document.querySelector('.hidden-menu');
+const mask = document.getElementById('mask');
 
 
 
@@ -70,3 +74,19 @@ photosDiv.addEventListener("click", (e) => {
     }
 })
 
+hiddenNav.addEventListener('click', () => {
+    console.log("hey")
+    mobileNav.style.display = 'block';
+    mask.style.display = 'block';
+});
+
+backBtn.addEventListener('click', () => {
+    mask.style.display = 'none';
+    mobileNav.style.display = 'none';
+});
+
+
+mask.addEventListener('click', () => {
+    mask.style.display = 'none';
+    mobileNav.style.display = 'none';
+});
