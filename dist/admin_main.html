@@ -61,7 +61,7 @@
         <section class="new-story_section">
             <h3 id="new-story__header">Create new story</h3>
             <hr class="underline">
-            <form id="new-story">
+            <form id="new-story" action="add_news">
                 <label for="new-story__title">Title of story: </label>
                 <input type="text" name="new-story__title" id="new-story__title" placeholder="...">
                 <div class="new-story__input-images">
@@ -79,7 +79,7 @@
         <section class="compose-newsletter_section">
             <h3 id="newsletter__header">New Newsletter</h3>
             <hr class="underline">
-            <form id="compose-newsletter" action="">
+            <form id="compose-newsletter" action="add_news">
                 <label for="newsletter__title">Title of Newsletter: </label>
                 <input type="text" name="newsletter__title" id="newsletter__title" placeholder="...">
                 <textarea class="ckeditor" id="newsletter-content" placeholder="Details of Newsletter" form="compose-newsletter"></textarea>
@@ -95,8 +95,8 @@
         <p>+234705644176</p><br>
     </footer>
     
-    <script src="./script/adminData.js"></script>
     <script src="./script/admin.js"></script>
+    <script src="./script/adminData.js"></script>
     <script src="./script/register_app.js"></script>
 </body>
 </html>

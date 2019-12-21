@@ -20,7 +20,7 @@ const addNewsLetter = (e) =>{
     e.preventDefault();
 
     let newsletterDetails = {
-        newsletter_title: document.getElementById('newsletter__title'),
+        newsletter_title: document.getElementById('newsletter__title').value,
         newsletter: CKEDITOR.instances['newsletter-content'].getData(),
     }
 
@@ -38,7 +38,7 @@ function storyPics() {
         picsArr.push(pics[i].value);
     }
 
-    console.log(picsArr)
+   return picsArr;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
