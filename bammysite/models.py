@@ -1,4 +1,5 @@
 from bammysite import db,ma
+from datetime import datetime
 
 # Parent's data
 class Parent(db.Model):
@@ -53,10 +54,23 @@ class Siblings(db.Model):
 # subscriber's data
 class subscriber(db.Model):
 	__tablename__ = 'Subscriber'
-	id = id = db.Column(db.Integer,nullable=False,primary_key=True)
+	id = db.Column(db.Integer,nullable=False,primary_key=True)
 	sub_name = db.Column(db.String(100))
 	sub_email = db.Column(db.String(100))
 	parentid = db.Column(db.Integer,db.ForeignKey('Parent.id'))
+
+class News(db.Model):
+	__tablename__ = 'News'
+	id = db.Column(db.Integer,nullable=False,primary_key=True)
+	title = db.Column(db.String(100))
+	body = db.Column(db.String(100))
+	date_created = db.Column(db.DateTime,default=datetime.utcnow)
+	img_data = db.Column(db.LargeBinary)
+
+class Admin(db.Model):
+	id = db.Column(db.Integer,nullable=False,primary_key=True)
+	admin_email = db.Column(db.String(100))
+	admin_password = db.Column(db.String(100))
 
 # Parent's Serialization Schema
 class ParentSchema(ma.Schema):

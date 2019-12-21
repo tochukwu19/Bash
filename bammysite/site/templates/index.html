@@ -5,119 +5,140 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Bammy College</title>
-    <link rel="stylesheet" href="{{url_for('static',filename='font-awesome-4.7.0/css/font-awesome.min.css')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
-    <link rel="icon" href="{{url_for('static',filename='img/bammyLOGO_register.ico')}}">
+    <link rel="stylesheet" href="fontawesome-free-5.12.0-web/css/all.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="icon" href="./img/BAMMY LOGO (1).ico">
 </head>
 <body>
-    {% if msg %}
-        <p class="msg">{{ msg }}</p>
-    {% endif %}
     <header>
-        
         <div class="nav-overlay">
-                <p class="back">BACK</p>
+            <p class="backBtn">BACK</p>
             <li class="active">HOME</li>
-            <li>ABOUT US</li>
+            <li><a href="about.html">ABOUT US</a></li>
             <li>PORTAL</li>
             <li>EVENTS</li>
             <li>GALLERY</li>
+            <li><a href="/admin_login.html">ADMIN</a></li> 
     </div>
         <div class="social-media-nav">
-            <ul class = "ul1">
+            <ul class = "contact-details">
                 <li><i class="fa fa-phone-square" aria-hidden="true"> </i>+234705644176</li>
                 <li><i class="fa fa-envelope" aria-hidden="true"> </i>bammycollege@gmail.com</li>
-                <li><i class="fa fa-clock-o" aria-hidden="true"> </i>School hours: 8:00AM - 3:30PM</li>
+                <li><i class="fa fa-clock" aria-hidden="true"> </i>School hours: 8:00AM - 3:00PM</li>
             </ul>
-            <ul class="ul2">
-                <li><img src="{{url_for('static',filename='img/facebook.png')}}" alt=""></li>
-                <li><img src="{{url_for('static',filename='img/instagram.png')}}" alt=""></li>
-                <li><img src="{{url_for('static',filename='img/twitter.png')}}" alt=""></li>
-                <li><img src="{{url_for('static',filename='img/whatsapp.png')}}" alt=""></li>
+            <ul class="social-details">
+                 <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-whatsapp"></i></a></i></li>
             </ul>
         </div>
-    </header>
-    <section class="premium" >
         <nav class="nav-bar">
-            <div class="logo-side">
-                <div class="logoContainer"><img class="logo" src="/static/img/BAMMY%20LOGO.jpg" alt="school-logo"></div>
-                <div class="brandName">
-                    BAMMY COLLEGE
+            <nav class="sub-nav-bar">
+                <ul>
+                    <a id="logo" href="index.html">
+                        <li><img src="./img/bammyLogo_register.jpg" alt="Home"></li>
+                    </a>
+                </ul>
+                <ul class="menubar">
+                    <a class="menulink" href="about.html">
+                        <li>About Us</li>
+                    </a>
+                    <a class="menulink">
+                        <li>Portal</li>
+                    </a>
+                    <a class="menulink">
+                        <li>Events</li>
+                    </a>
+                    <a class="menulink">
+                        <li>Gallery</li>
+                    </a>
+                    <a href="/admin_login.html" class="menulink">
+                        <li>Admin</li> 
+                    </a>
+                </ul>
+                <div class="hidden-menu menu">
+                   <span></span>
+                   <span></span>
+                   <span></span>
                 </div>
-            </div>
-            <div class="nav-side">
-                    <li class="active">HOME</li>
-                    <li>ABOUT US</li>
-                    <li>PORTAL</li>
-                    <li>EVENTS</li>
-                    <li>GALLERY</li>
-            </div>
-            <div class="hidden-menu">
-                <p class="menu">MENU</p>
-            </div>
+            </nav>
+          
         </nav>
-        <div class="jumboText">
+    </header>
+    <section class="landing-page" >
+       
+        <div class="landing-page-text">
             <p>Premium Education is just a click away</p>
-            <a class="Reg" href="{{url_for('site.register')}}">Register with us</a>
+            <a class="Register-link" href="register_index.html">Register with us</a>
         </div>
     </section>
 
-    <section class="latest-stories">
-        <h1 class="latest">LATEST NEWS</h1>
-        <hr class="hr1">
-        <hr class="hr2">
+    <section class="latest-news-container">
+        <h1 class="latest-news">LATEST NEWS</h1>
         <div class="news-container">
             <div class="news">
-                <h2 class="newsH">OPEN DAY</h2>
-                <div class="newsImgContainer">
-                    <img class="newImg" src="{{url_for('static',filename='img/DSC_0525.JPG')}}" alt="news-Image">
+                <div class="news-header">OPEN DAY</div>
+                <div class="mobile-view-div">
+                <div class="news-image-container">
+                    <img class="news-image" src="./img/DSC_0525.JPG" alt="news-Image">
                 </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed libero lectus, vestibulum sollicitudin malesuada dignissim,
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <span class="hidden-span-on-mobile">Sed libero lectus, vestibulum sollicitudin malesuada dignissim,
                 ultricies efficitur lacus. Curabitur nec nisi nec nisl finibus fermentum. Praesent ac dui ac justo hendrerit imperdiet.
-                Integer consequat, quam eget ornare ultricie.</p>
+                Integer consequat, quam eget ornare ultricie.</span>
+                <a href="#" class="Readmore">Read More ..</a></p>
+
+                </div>
             </div>
-            <div class="news"><h2 class="newsH">NEW PREFECTS</h2>
-                <div class="newsImgContainer"><img class="newImg" src="{{url_for('static',filename='img/DSC_0538.JPG')}}" alt="news-Image"></div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed libero lectus, vestibulum sollicitudin malesuada
+            <div class="news">
+                <div class="news-header">NEW PREFECTS</div>
+                <div class="mobile-view-div">
+                <div class="news-image-container"><img class="news-image" src="./img/DSC_0538.JPG" alt="news-Image"></div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <span class="hidden-span-on-mobile">Sed libero lectus, vestibulum sollicitudin malesuada
                 dignissim,
-                ultricies efficitur lacus. Curabitur nec nisi </p></div>
-            <div class="news"><h2 class="newsH">SECOND TERM <br> EXAMINATION</h2>
-                <div class="newsImgContainer"><img class="newImg" src="{{url_for('static',filename='img/DSC_0546.JPG')}}" alt="news-Image"></div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed libero lectus, vestibulum sollicitudin malesuada
-                dignissim,
-                ultricies efficitur lacus. Curabitur nec nisi nec nisl finibus fermentum. Praesent ac dui ac justo hendrerit
-                imperdiet.
-              </p></div>
+                ultricies efficitur lacus. Curabitur nec nisi</span>
+                <a href="#" class="Readmore">Read More ..</a>
+            </p>
+                
+            </div>
+        </div>
+            <div class="news">
+                <div class="news-header">SECOND TERM EXAMINATION</div>
+                <div class="mobile-view-div">
+                  <div class="news-image-container"><img class="news-image" src="./img/DSC_0546.JPG" alt="news-Image"></div>
+                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <span class="hidden-span-on-mobile">Sed libero lectus, vestibulum sollicitudin malesuada
+                   dignissim,
+                   ultricies efficitur lacus. Curabitur nec nisi nec nisl finibus fermentum. Praesent ac dui ac  justo hendrerit
+                   imperdiet.</span>
+                <a href="#" class="Readmore">Read More ..</a>
+              </p>
+             
+              </div>
+           </div>
         </div>
     </section>
     <footer>
-        <div class="foot1">
+        <div class="sub-footer1">
             <em>Avanti Terracotta</em>
-            <p class="Bammy-slogan">"Bammyy's College Is The Best Affordable School In Agbado"</p>
-                <hr class="hr5">
-                <hr class="hr4">
+            <p class="school-slogan">"Bammyy's College Is The Best Affordable School In Agbado"</p>
+
         </div>
-        <div class="foot2">
-            <p class="Bammy-slogan">Subscribe To Our Newsletter</p>
-            <hr class="hr3"><br>
-            <div class="subC">
-                <p class="sub-text">Don't miss out on any of our events!</p>
-                <div class="subC1">
-                <form action="news_signup" method="POST">
-                    <input class="sub-input" placeholder="  Enter your email address" name="email">
-                    <input class="sub-input" placeholder="  Fullname" name="name">
-                    <div class="labelC">
-                        <button type="submit" class="subP">Subscribe</button>
-                    </div>
-                </form>
-            </div>
+        <div class="sub-footer2">
+            <div class="sub-footer2-container">
+                <h2>Stay In Touch</h2>
+                <p class="sub-footer-text">Subscribe to our newsletter so you don't miss out on any of our events!</p>
+                <div class="input-icon-wrap">
+                    <span class="input-icon"><span class="far fa-user"></span></span>
+                    <input type="text" class="input-with-icon" name="name" id="form-name" placeholder="Enter your name">
+                </div>
+                <div class="input-icon-wrap">
+                    <span class="input-icon"><span class="far fa-paper-plane"></span></span>
+                    <input type="text" class="input-with-icon" name="email" id="form-name" placeholder="Enter your email address">
+                </div>
             </div>
         </div>
        
     </footer>
-    <script src="{{url_for('static',filename='script/app.js')}}"></script>
-</body>
-</html>
-
+    <script src="./script/app.js"></script>
 </body>
 </html>

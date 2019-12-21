@@ -1,6 +1,7 @@
 from flask import Blueprint, flash, render_template, url_for, request,g,redirect,flash,session,json
 from bammysite import app,db,ma,mail
-from bammysite.models import  Parent,Student,Siblings,subscriber,parent_schema,parents_schema,student_schema,students_schema,sibling_schema,siblings_schema
+from bammysite.models import  Parent,Student,Siblings,subscriber,parent_schema
+from bammysite.models import parents_schema,student_schema,students_schema,sibling_schema,siblings_schema,News,Admin
 import os
 from flask_mail import Message
 
@@ -71,18 +72,63 @@ def register():
 	return render_template('register_index.html')
 
 
+@sitemod.route('/admin_login',methods=['GET','POST'])
+def admin_login():
+	if request.method == 'POST':
+		session.pop('user',None)
+		email = request.form['admin-login__email']
+		password = request.form['admin-login__password']
+		user = Admin.query.filter_by(admin_email=email).first()
+		if user != None:
+			password = user.admin_password
+			if request.form['admin-login__password'] == password:
+				session['user'] = request.form['admin-login__email']
+				return redirect(url_for('site.admin'))
+			else:
+				error='Password incorrect - forgot password?'
+				return render_template('admin_login.html')
+		else:
+			error = 'No user with that email was found'
+			return render_template('admin_login.html',error=error)
+
+	return render_template('admin_login.html')
+
+@sitemod.route('/admin')
+def admin():
+	if 'user' in session:
+		return render_template('admin_main.html')
+	return render_template('admin_login.html')
+
+@sitemod.route('/admin_logout')
+def admin_logout():
+	if 'user' in session:
+		session.pop('user',None)
+	return redirect(url_for('site.admin_login'))
+
 # send email
-def send_email(subject, sender, recipients, text_body, html_body):
+'''def send_email(subject, sender, recipients, text_body, html_body):
 	msg = Message(subject, sender=sender, recipients=recipients)
 	msg.body = text_body
 	msg.html = html_body
 	mail.send(msg)
 
-	#return msg
+	return msg
 
-'''@sitemod.route('/send_newsletter')
+
+@sitemod.route('/send_newsletter')
 def send_newsletter():
+'''
 
+@sitemod.route('/admin_signup',methods=['GET','POST'])
+def admin_signup():
+	if request.method == 'POST':
+		admin_email = request.form['email']
+		password = request.form['password']
+
+		admin = Admin(admin_email=admin_email,admin_password=password)
+		db.session.add(admin)
+		db.session.commit()
+	return render_template('signup.html')
 # Newsletter
 @sitemod.route('/news_signup',methods=['GET','POST'])
 def news_signup():
@@ -109,3 +155,22 @@ def news_signup():
 
 		return render_template('index.html',msg=msg)
 	return render_template('index.html')
+
+
+@sitemod.route('/add_news')
+def add_news():
+	if request.method == 'POST':
+		headline = request.form['news_headline']
+		info = request.form['story-info']
+		image = request.files['news_photo']
+
+		news = News(title=headline,body=info,img_data=image.read())
+
+		db.session.add(news)
+		db.session.commit()
+
+		news = News.query.filter_by(title=headline).first()
+		if news != None:
+			msg = 'News created successfully!'
+
+	return render_template('admin_main.html',msg=msg)

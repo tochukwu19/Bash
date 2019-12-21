@@ -7,7 +7,7 @@ html{
     margin: 0px;
 }
 body{
-    background: #679436;
+    background: #679436 !important;
     font-family: 'Poppins', sans-serif;
 }
 main{
@@ -37,6 +37,7 @@ main{
     width: 100%;
     vertical-align: middle;
     box-shadow: 0 2px 5px #34383a;
+    z-index: 20;
 }
 
 .navbar li{
@@ -60,7 +61,7 @@ main{
    transition-duration: 200ms;
 }
 
-.hamburger{
+/* .hamburger{
     cursor: pointer;
     width: 10%;
 }
@@ -71,8 +72,25 @@ main{
     border-radius:20px ;
     transform: scale(1.1);
     transition-duration: 200ms;
+} */
+
+.hidden-menu span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #679436;
+  border-radius: 3px;  
+  transform-origin: 4px 0px; 
 }
 
+.hidden-menu{
+      float: right;
+      margin-top: 15px;
+      display: none;
+
+}
 #mobile-nav{
     display: none;
     position: fixed;
@@ -84,7 +102,7 @@ main{
     top: 2%;
     text-align: center;
     height: 45rem;
-    z-index: 10;
+    z-index: 50;
 }
 
 #mobile-nav li{
@@ -109,7 +127,7 @@ main{
     position: fixed;
     width: 100vw;
     height: 100vh;
-    z-index: 5;
+    z-index: 25;
     background: #00000094;
 }
 
@@ -264,9 +282,10 @@ footer{
     padding: 1rem;
     color: #e7e5e5;
     background: rgba(0, 0, 0, 0.774);
+    height: 20vh;
 }
 
-@media(min-width:40rem){
+@media(min-width:48rem){
     .container{
         margin: 1.5rem auto;
     }
@@ -284,5 +303,16 @@ footer{
     .hamburger{
         display: none;
         width: 10%;
+    }
+   
+}
+
+@media(max-width:640px){
+     .navbar{
+        height: 90px;
+    }
+    .hidden-menu{
+        display: block;
+        cursor: pointer;
     }
 }

@@ -27,6 +27,9 @@ ma = Marshmallow(app)
 # Init flask-mail
 mail = Mail(app)
 
+# session key
+app.secret_key = os.urandom(24)
+
 # import blueprint
 from bammysite.site.views import sitemod
 
