@@ -318,7 +318,7 @@ footer{
 
 }
 
-@media(max-width:640px){
+@media(max-width:47.99rem){
      .navbar{
         height: 90px;
     }
