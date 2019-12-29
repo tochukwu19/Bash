@@ -121,7 +121,7 @@ section#principal {
     z-index: 1;
     font-size: 16px;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     list-style-type: none;
     margin: 0;
     text-align: center;
@@ -242,7 +242,7 @@ section#principal {
 
 /* about */
 #about {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     background-color: #fff;
 }
@@ -395,7 +395,7 @@ button#slick-slide-control01 {
 
 /* principal */
 #principal {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
 }
 .principal-info {
@@ -466,7 +466,7 @@ button#slick-slide-control01 {
    }
    .about-info p,
    .principal-info p {
-        margin: 50px;
+        margin: 8%;
    }
    .main-nav {
        display: none;
@@ -477,10 +477,32 @@ button#slick-slide-control01 {
 }
 
 @media screen and (max-width: 420px){
-    .school-image {
+/*     .school-image, .principal-image {
         display: none;
-    }
+    } */
     .post-slider {
         margin-top: 25vh;
     }
+    .sec-social-media {
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+    .sec-contact-info {
+        padding: 5%;
+    }
+    .sec-contact-info li {
+        padding: 5px;
+    }
 }
+@media screen and (max-width: 320px){
+        .principal-info p {
+            margin: 8%;
+        }
+        .school-image {
+            margin-bottom: 8%;
+        }
+        .sec-social-media {
+            margin-left: 18%;
+            margin-right: 10%;
+        }
+    }
