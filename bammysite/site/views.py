@@ -174,3 +174,7 @@ def add_news():
 			msg = 'News created successfully!'
 
 	return render_template('admin_main.html',msg=msg)
+
+@sitemod.route('/about')
+def about():
+	return render_template('about.html')
