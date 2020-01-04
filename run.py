@@ -1,13 +1,5 @@
 from bammysite import app,db
-from flask_migrate import Migrate,MigrateCommand
-from flask_script import Manager
+from flask_migrate import Migrate
 
 # flask-migrate
 migrate = Migrate(app,db)
-
-# cli initializer
-manager = Manager(app)
-manager.add_command('db', MigrateCommand)
-
-#run manager
-manager.run()
