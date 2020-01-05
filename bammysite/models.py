@@ -35,7 +35,7 @@ class Student(db.Model):
 	sex = db.Column(db.String(10))
 	ail = db.Column(db.String(10))
 
-	school = db.Column(db.Text(200))
+	school = db.Column(db.Text())
 	school_address = db.Column(db.String(200))
 	class_ = db.Column(db.String(100))
 	year = db.Column(db.String(100))
