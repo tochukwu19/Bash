@@ -16,7 +16,10 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'bammy.sqlite')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False'''
 
-app.config.from_envvar('APP_SETTINGS')
+#app.config.from_envvar('APP_SETTINGS')
+
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Init db
 db = SQLAlchemy(app)
