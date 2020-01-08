@@ -24,7 +24,20 @@ section#principal {
     background-color: #679436;
     display: flex;
 }
+.sec-main-nav {
+    background-color: #679436;
+    display: flex;
+}
+.sec-main-nav {
+    display: none;
+}
 .contact-info {
+    flex: 1;
+    padding-left: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+.sec-contact-info {
     flex: 1;
     padding-left: 5%;
     padding-top: 1%;
@@ -36,15 +49,31 @@ section#principal {
     padding-top: 1%;
     padding-bottom: 1%;
 }
+.sec-social-media {
+    flex: 0.5;
+    padding-left: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
 .contact-info li,
 .social-media li {
     display: inline-block;
     padding-right: 4%;
     color: white;
 }
+.sec-contact-info li,
+.sec-social-media li {
+    display: inline-block;
+    padding-right: 4%;
+    color: white;
+}
 .fa {
     padding: 6px;
-cd.social-media li .fab{
+}
+.social-media li .fab{
+    color: white;
+}
+.sec-social-media li .fab{
     color: white;
 }
 .fab {
@@ -65,6 +94,73 @@ cd.social-media li .fab{
     display: flex;
     align-items: center;
 }
+
+.hidden-menu{
+    cursor: pointer;
+    display: none;
+}
+
+.hidden-menu span {
+    display: block;
+    width: 30px;
+    height: 4px;
+    padding-right: 15%;
+    margin-bottom: 5px;
+    position: relative;
+    background: #679436;
+    border-radius: 3px;  
+    transform-origin: 4px 0px; 
+    z-index: 20;
+}
+
+.nav-overlay {
+    background-color: #184115;
+    position: fixed;
+    position: absolute;
+    display: none;
+    z-index: 1;
+    font-size: 16px;
+    width: 100vw;
+    min-height: 100vh;
+    list-style-type: none;
+    margin: 0;
+    text-align: center;
+    font-family: Montserrat;
+    z-index: 50;
+}
+
+.nav-overlay ul li {
+    padding: 2vh;
+    color: white;
+}
+.nav-overlay ul li a {
+    color: white;
+    text-decoration: none;
+}
+.nav-overlay ul {
+    padding-top: 50vh;
+}
+
+.nav-overlay > li > a{
+     text-decoration: none;
+     color: #fff;
+}
+
+.backBtn{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 25px;
+    color: #F3AF57;
+    padding-bottom: 30px;
+}
+
+.backBtn:hover{
+   color: #BBA24E;
+}
+
+.show{
+    display: block !important;
+}
+
 .school-name,
 .nav-menu {
     flex: 1;
@@ -119,6 +215,7 @@ cd.social-media li .fab{
     display: flex;
     justify-content: space-around;
     justify-content: center;
+    flex-wrap:wrap;
     align-items: center;
     margin-top: 5%;
 }
@@ -145,7 +242,7 @@ cd.social-media li .fab{
 
 /* about */
 #about {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     background-color: #fff;
 }
@@ -167,8 +264,18 @@ cd.social-media li .fab{
     padding-top: 25vh;
     margin-top: 2%;
 }
+.about-principal-image {
+    flex: 1;
+    margin-left: 8%;
+    padding-top: 25vh;
+    margin-top: 2%;
+}
 .school-image {
-    width:450px;
+    width: 450px;
+    border-radius: 5px 100px 60px 250px;
+}
+.principal-image {
+    width: 450px;
     border-radius: 5px 100px 60px 250px;
 }
 
@@ -277,13 +384,18 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
 }
 
+button#slick-slide-control00,
+button#slick-slide-control01 {
+    display: none;
+}
+
 .fas{
     color: #fff;
 }
 
 /* principal */
 #principal {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
 }
 .principal-info {
@@ -298,3 +410,99 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.7em;
     color: #3b5c18;
 }
+#footer {
+    display: none;
+}
+
+
+/*media queries */
+
+@media screen and (max-width: 768px){
+    .buttons {
+        flex-direction :column;
+        padding-top: 8%;
+    }
+    .school-name {
+        padding-left: 5%;
+    }
+    .nav-menu {
+        display: none;
+    }
+    .hidden-menu{
+        display: block;
+        padding-right:10%;
+    }
+   h1.about{
+     display: none;
+   }
+   #about,
+   #principal {
+       flex-direction: column;
+   }
+   .about-info,
+   .about-image{
+       padding-top: 5vh;
+   }
+   .about-image {
+       margin: auto;
+       padding-top: 0;
+   }
+   .about-principal-image {
+    margin: auto;
+    padding-top:15vh;
+   }
+   .principal-info {
+       padding-top: 0;
+   }
+   .school-image {
+       width: 300px;
+       border: 2px solid #3b5c18;
+       border-radius: 10px 10px 10px 10px;
+   }
+   .principal-image {
+    width: 300px;
+    border: 2px solid #3b5c18;
+    border-radius: 10px 10px 10px 10px;
+   }
+   .about-info p,
+   .principal-info p {
+        margin: 8%;
+   }
+   .main-nav {
+       display: none;
+   }
+   .sec-main-nav {
+       display: block;
+   }
+}
+
+@media screen and (max-width: 420px){
+/*     .school-image, .principal-image {
+        display: none;
+    } */
+    .post-slider {
+        margin-top: 25vh;
+    }
+    .sec-social-media {
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+    .sec-contact-info {
+        padding: 5%;
+    }
+    .sec-contact-info li {
+        padding: 5px;
+    }
+}
+@media screen and (max-width: 320px){
+        .principal-info p {
+            margin: 8%;
+        }
+        .school-image {
+            margin-bottom: 8%;
+        }
+        .sec-social-media {
+            margin-left: 18%;
+            margin-right: 10%;
+        }
+    }
