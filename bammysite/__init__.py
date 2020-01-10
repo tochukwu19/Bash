@@ -1,40 +1,31 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
-from flask_migrate import Migrate,MigrateCommand
+from flask_migrate import Migrate
+from flask_mail import Mail,Message
 from flask_script import Manager
-from flask_mail import Mail
+from config import config
 import os
 
-app = Flask(__name__)
-'''basedir = os.path.abspath(os.path.dirname(__file__))
+db = SQLAlchemy()
+ma = Marshmallow()
+mail = Mail()
+manager = Manager()
 
-# session key
-#app.secret_key = os.urandom(24)
+def __call__(config_name):
+    app = Flask(__name__)
+    app.config.from_object(config[config_name])
+    config[config_name].init_app(app)
+    
+    db.init_app(app)
+    ma.init_app(app)
+    mail.init_app(app)
 
-# Database config
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'bammy.sqlite')
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False'''
+    # register blueprint
+    from bammysite.site.views import sitemod as bash
 
-#app.config.from_envvar('APP_SETTINGS')
+    app.register_blueprint(bash)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    app.secret_key = os.urandom(24)
 
-# Init db
-db = SQLAlchemy(app)
-
-# Init Marshmallow
-ma = Marshmallow(app)
-
-# Init flask-mail
-mail = Mail(app)
-
-# session key
-app.secret_key = os.urandom(24)
-
-# import blueprint
-from bammysite.site.views import sitemod
-
-# register blueprint
-app.register_blueprint(site.views.sitemod)
+    return app

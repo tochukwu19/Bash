@@ -1,19 +1,18 @@
 from flask import Blueprint, flash, render_template, url_for, request,g,redirect,flash,session,json
-from bammysite import app,db,ma,mail
+from bammysite import db,ma,mail
 from bammysite.models import  Parent,Student,Siblings,subscriber,parent_schema
 from bammysite.models import parents_schema,student_schema,students_schema,sibling_schema,siblings_schema,News,Admin
 import os
-from flask_mail import Message
-
+#from .email import send_batch
 sitemod = Blueprint('site', __name__, template_folder='templates')
 
 
-'''# check that current users have a session
+# check that current users have a session
 @sitemod.before_request
 def before_request():
 	g.user = None
 	if 'user' in session:
-		g.user = session['user']'''
+		g.user = session['user']
 
 @sitemod.route('/')
 @sitemod.route('/index')
@@ -105,19 +104,19 @@ def admin_logout():
 		session.pop('user',None)
 	return redirect(url_for('site.admin_login'))
 
-# send email
-'''def send_email(subject, sender, recipients, text_body, html_body):
-	msg = Message(subject, sender=sender, recipients=recipients)
-	msg.body = text_body
-	msg.html = html_body
-	mail.send(msg)
 
-	return msg
-
-
-@sitemod.route('/send_newsletter')
+"""@sitemod.route('/send_newsletter')
 def send_newsletter():
-'''
+	if request.method == 'POST':
+		users = subscriber.query.all()
+		recipients = [user.email for user in users]
+		subject = request.form['newsletter__title']
+		news_body = request.form['newsletter-content']
+		data = {'subject':subject,'recipients':recipients}
+		send_batch(data)
+
+	return redirect(url_for('site.admin'))"""
+
 
 @sitemod.route('/admin_signup',methods=['GET','POST'])
 def admin_signup():
