@@ -3,9 +3,9 @@ from bammysite import db,ma,mail
 from bammysite.models import  Parent,Student,Siblings,subscriber,parent_schema
 from bammysite.models import parents_schema,student_schema,students_schema,sibling_schema,siblings_schema,News,Admin
 import os
-#from .email import send_batch
 sitemod = Blueprint('site', __name__, template_folder='templates')
 
+from flask import current_app
 
 # check that current users have a session
 @sitemod.before_request
@@ -105,7 +105,7 @@ def admin_logout():
 	return redirect(url_for('site.admin_login'))
 
 
-"""@sitemod.route('/send_newsletter')
+@sitemod.route('/send_newsletter',methods=['GET','POST'])
 def send_newsletter():
 	if request.method == 'POST':
 		users = subscriber.query.all()
@@ -113,9 +113,10 @@ def send_newsletter():
 		subject = request.form['newsletter__title']
 		news_body = request.form['newsletter-content']
 		data = {'subject':subject,'recipients':recipients}
-		send_batch(data)
+		with current_app.app_context():
+			send_batch(data)
 
-	return redirect(url_for('site.admin'))"""
+	return redirect(url_for('site.admin'))
 
 
 @sitemod.route('/admin_signup',methods=['GET','POST'])

@@ -14,11 +14,11 @@
 <body>
     <header>
         <nav class="navbar">
-            <a id="logo" href="index.html"><img src="{{url_for('static',filename='img/bammyLogo_register.jpg')}}" alt="Home"></a>
+            <a id="logo" href="index"><img src="{{url_for('static',filename='img/bammyLogo_register.jpg')}}" alt="Home"></a>
             <ul >
-                <a href="index.html"><li>Home</li></a>
+                <a href="index"><li>Home</li></a>
                 <a><li>About Us</li></a>
-                <a><li>Portal</li></a>
+                <!--<a><li>Portal</li></a>-->
                 <a class="logoutBtn" href="#"><li>Logout</li></a>
             </ul>
             <a class="hamburger">
@@ -40,8 +40,9 @@
         <div id="mobile-nav">
             <ul>
                 <a id="back-btn"><li>Back to page</li></a>
-                <a><li>About Us</li></a>
-                <a><li>Portal</li></a>
+                <a href="index"><li>Home</li></a>
+                <a href="about"><li>About Us</li></a>
+                <!--<a><li>Portal</li></a>-->
                 <a class="logoutBtn"><li>Logout</li></a>
             </ul>
         </div>
@@ -80,7 +81,7 @@
     </main>
     <footer>
         <p>&copy; Bammy School 2019</p><br>
-        <p>bammycollege@gmail.com</p><br>
+        <p>bammyschools03@gmail.com</p><br>
         <p>+234705644176</p><br>
     </footer>
     

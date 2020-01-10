@@ -123,17 +123,19 @@
             <div class="sub-footer2-container">
                 <h2>Stay In Touch</h2>
                 <p class="sub-footer-text">Subscribe to our newsletter so you don't miss out on any of our events!</p>
-                <div class="input-icon-wrap">
-                    <span class="input-icon"><span class="far fa-user"></span></span>
-                    <input type="text" class="input-with-icon" name="name" id="form-name" placeholder="Enter your name">
-                </div>
-                <div class="input-icon-wrap">
-                    <span class="input-icon"><span class="far fa-paper-plane"></span></span>
-                    <input type="text" class="input-with-icon" name="email" id="form-name" placeholder="Enter your email address">
-                </div>
+                <form action="news_signup" method='POST'> 
+            		<div class="input-icon-wrap">
+	                    <span class="input-icon"><span class="far  fa-user"></span></span>
+	                    <input type="text" class="input-with-icon" name="name" id="form-name" placeholder="Enter your name">
+            		</div>
+                	<div class="input-icon-wrap">
+	                    <span class="input-icon"><span class="far fa-paper-plane"></span></span>
+	                    <input type="text" class="input-with-icon" name="email" id="form-name" placeholder="Enter your email address">
+                	</div>
+                	<button type=submit id="news-signup-btn">Sign Up</button>
+                </form>
             </div>
         </div>
-       
     </footer>
     <script src="{{url_for('static',filename='script/app.js')}}"></script>
 </body>

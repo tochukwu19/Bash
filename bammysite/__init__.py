@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask,render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 from flask_migrate import Migrate
@@ -27,5 +27,24 @@ def __call__(config_name):
     app.register_blueprint(bash)
 
     app.secret_key = os.urandom(24)
+
+    with app.app_context():
+    	def send_email(subject='',sender=app.config['MAIL_DEFAULT_SENDER'],recipients=[],text_body=render_template('newsletter.txt'),html_body=render_template('newsletter.html')):
+    		msg = Message(subject=subject,sender=sender,recipients=recipients)
+    		msg.body = text_body
+    		msg.html = html_body
+
+    	def send_mail(subject='',sender=app.config['MAIL_DEFAULT_SENDER'],recipients=[],text_body=render_template('newsletter.txt'),html_body=render_template('newsletter.html')):
+    		msg = Message(subject=subject,sender=sender,recipients=recipients)
+    		msg.body = text_body
+    		msg.html = html_body
+    		mail.send(msg)
+
+    	def send_batch(data):
+    		with mail.connect() as conn:
+    			for user in data['recipients']:
+    				send_email(**data)
+
+    				conn.send(msg)
 
     return app
