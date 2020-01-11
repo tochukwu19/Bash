@@ -28,10 +28,6 @@ body{
     align-items: center;
     flex-direction: column;
 }
-.social-media-nav > .contact-details {
-    display: flex;
-  justify-content: space-between
-}
 
 
 
@@ -80,7 +76,7 @@ body{
      display: none;
  }
 
-header > .social-media-nav > .contact-details{
+.social-media-nav > .contact-details{
     list-style-type: none;
     padding: 5px;
     margin: 0;
@@ -88,13 +84,13 @@ header > .social-media-nav > .contact-details{
     justify-content: space-around;
     width: 65vw;
 }
-header > .social-media-nav > .social-details{
+.social-media-nav > .social-details{
     list-style-type: none;
     padding: 5px;
     margin: 0;
     display: flex;
     justify-content: space-around;
-    width: 20vw;
+    width: 30vw;
 }
 
 .nav-overlay{
@@ -325,6 +321,13 @@ header > .social-media-nav > .social-details{
      padding-right: 15px;
    
  }
+/*Button*/
+ .button{
+     padding: 5px;
+     border-radius: 4px;
+     border: 0;
+     box-shadow: 2px 2px 2px #000020; 
+}
 
 
 
@@ -334,18 +337,31 @@ header > .social-media-nav > .social-details{
         
         .social-media-nav > .contact-details{
             list-style-type: none;
-            padding: 5px;
-            margin: 0;
-            display: flex;
-            flex-flow: column;
-            justify-content: space-around;
-            width: 65vw;
+    padding: 5px;
+    margin: 0;
+    display: flex;
+            flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
         }
+     
+     .social-media-nav > .social-details {
+   list-style-type: none;
+    padding: 5px;
+    margin: 10px;
+    display: flex;
+    justify-content: space-around;
+    width: 65vw;
+   
+}
+
 
         .social-media-nav{
             height: 60px;
             max-width: 100%;
-           
+            display: flex;
+           flex-direction: row;
+            background-color: #635c5e
         }
 
         .menubar{
