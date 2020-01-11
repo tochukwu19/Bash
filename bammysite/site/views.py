@@ -184,7 +184,11 @@ def add_news():
 			msg = 'News created successfully!'
 
 	return render_template('admin_main.html')
-
+@sitemod.route('payments', methods=['GET', 'POST'])
+def payments():
+    '''
+    payment logic
+    '''
 @sitemod.route('/about')
 def about():
 	return render_template('about.html')
