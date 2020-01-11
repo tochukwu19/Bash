@@ -1,24 +1,30 @@
 const menu = document.querySelector(".menu")
 const navHidden = document.querySelector(".nav-overlay")
-const back = document.querySelector(".backBtn")
-const hamburger = document.querySelector('.hidden-menu');
+const back = document.querySelector(".cancel")
+const hamburger = document.querySelector('.hamburger');
 const mobileNav = document.querySelector('.menubar');
 
-const menuSan = () => {
-    // console.log("menuuuuu")
-    navHidden.classList.add("show")
-}
+//const menuSan = () => {
+//navHidden.classList.add("show")
+//}
+//
+//menu.addEventListener("click", menuSan);
+//
+//const backSan = () => {
+// navHidden.classList.remove("show")
+//}
+//
+//back.addEventListener("click", backSan)
 
-menu.addEventListener("click", menuSan);
+hamburger.addEventListener("click",()=>{
+navHidden.classList.remove("animate-out");
+    hamburger.style.display = 'none';
+navHidden.classList.add("animate-in")
+    console.log('yes');
+});
 
-
-const backSan = () => {
-    // console.log("backkkk")
-    navHidden.classList.remove("show")
-}
-
-// hamburger.addEventListener('click', () => {
-
-// })
-
-back.addEventListener("click", backSan)
+back.addEventListener("click",()=>{
+    navHidden.classList.remove("animate-in");
+   hamburger.style.display = 'block'; navHidden.classList.add("animate-out");
+    
+})

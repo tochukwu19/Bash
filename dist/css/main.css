@@ -98,12 +98,11 @@ body{
 
 
 .nav-overlay{
-
     background-color: #fff;
-    position: fixed;
-    display: none;
+    position: absolute;
+    left: -335px;
     z-index: 1;
-    width: 100vw;
+    width: 70vw;
     height: 100vh;
     list-style-type: none;
     margin: 0;
@@ -112,6 +111,27 @@ body{
     font-size: 20px;
     z-index: 50;
  }
+.animate-in{
+    animation-name: animate-in;
+    animation-duration: 1s;
+    animation-fill-mode: forwards
+}
+.animate-out{
+    animation-name: animate-out;
+    animation-duration: 1s;
+    animation-fill-mode: forwards
+}
+@keyframes animate-in{
+   from {left: 335px;   opacity: 10;}
+    to {left: 0;   opacity: 1;}
+}
+
+@keyframes animate-out{
+    from {left: 0;   opacity: 1;}
+    to {left: -335px;   opacity: 0;}
+}
+
+
 
  .menu{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -126,14 +146,13 @@ body{
     cursor: pointer;
  }
 
- .backBtn{
-       font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-       font-size: 25px;
+ .cancel{
+       font-size: 35px;
        color: #F3AF57;
-       padding-bottom: 30px;
+       padding-top: 20px;
  }
 
- .backBtn:hover{
+ .cancel:hover{
       color: #BBA24E;
  }
  .nav-overlay > li  {
@@ -141,9 +160,11 @@ body{
  }
  .nav-overlay > li > a{
      text-decoration: none;
-     color: #000;
+     color: #295e32;
  }
-
+.nav-overlay > li > a.active{
+    color:#000;
+}
 
  .show{
      display: block !important;
@@ -160,6 +181,7 @@ body{
   border-radius: 3px;  
   transform-origin: 4px 0px; 
   z-index: 20;
+  margin-left: 15px;
 }
 
 
@@ -295,7 +317,7 @@ body{
        height: 250px;
        width: 100%;
        text-align: center;
-       padding-top: 4px;
+       padding: 5px 10px 10px 10px;
 
  }
 
@@ -327,10 +349,18 @@ body{
  }
 /*Button*/
  .button{
-     padding: 5px;
+     padding: 5px 10px;
+     background: #fff;
+     color: #679436;
      border-radius: 4px;
-     border: 0;
+     border: none;
      box-shadow: 2px 2px 2px #000020; 
+}
+.button:hover{
+    padding: 6px 12px;
+    background: #679436;
+    color: #fff;
+    border: solid #fff 1px;
 }
 
 
@@ -338,8 +368,48 @@ body{
 
 /* For Smaller Devices */
  @media (max-width:800px) {
+     
+     .hamburger{
+         color: #679436;
+     }
+     
+     .nav-overlay{
+    background-color: #fff;
+    position: absolute;
+    left: -480px;
+    z-index: 1;
+    width: 70vw;
+    height: 100vh;
+    list-style-type: none;
+    margin: 0;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    z-index: 50;
+ }
+     
+     .animate-in{
+    animation-name: animate-in;
+    animation-duration: 1s;
+    animation-fill-mode: forwards
+}
+.animate-out{
+    animation-name: animate-out;
+    animation-duration: 1s;
+    animation-fill-mode: forwards
+}
+@keyframes animate-in{
+   from {left: -420px;   opacity: 10;}
+    to {left: 0;   opacity: 1;}
+}
+
+@keyframes animate-out{
+    from {left: 0;   opacity: 1;}
+    to {left: -420px;   opacity: 0;}
+}
+
         
-        .social-media-nav > .contact-details{
+     .social-media-nav > .contact-details{
     list-style-type: none;
     padding: 5px;
     margin: 0;
@@ -348,11 +418,15 @@ body{
     justify-content: space-around;
     width: 100%;
         }
+     .social-media-nav > .contact-details >
+     li{
+         padding-bottom: 12px;
+     }
      
      .social-media-nav > .social-details {
    list-style-type: none;
-    padding: 5px;
-    margin: 0;
+    padding: 0 0 0 20px;
+    margin-right: 60px;
     display: flex;
     justify-content: space-around;
     width: 55vw;
@@ -361,11 +435,12 @@ body{
 
 
         .social-media-nav{
-            height: 100px;
-            max-width: 100%;
+            height: 120px;
+            width: 100%;
             display: flex;
            flex-direction: row;
-            background-color: #635c5e
+            background-color: #635c5e;
+            padding: 10px
         }
 
         .menubar{
@@ -376,6 +451,8 @@ body{
         }
         .hidden-menu{
             display: block;
+            z-index: 999;
+            padding-left: 20px;
         }
         .sub-nav-bar{
             justify-content: space-between;
@@ -438,7 +515,7 @@ body{
 
   @media (max-width:435px) {
       
-        header > .social-media-nav{
+        .social-media-nav{
             height: 80px;
         }
     
@@ -447,7 +524,7 @@ body{
             flex-direction: column;
         }
 
-        header > .social-media-nav{
+        .social-media-nav{
             height: 130px;
             flex-flow: column;
             width: 96.9%;
