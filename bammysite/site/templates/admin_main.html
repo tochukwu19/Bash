@@ -69,11 +69,11 @@
         <section class="compose-newsletter_section">
             <h3 id="newsletter__header">New Newsletter</h3>
             <hr class="underline">
-            <form id="compose-newsletter" action="send_newsletter">
+            <form id="compose-newsletter" action="send_newsletter"  method='POST'>
                 <label for="newsletter__title">Title of Newsletter: </label>
                 <input type="text" name="newsletter__title" id="newsletter__title" placeholder="...">
                 <textarea class="ckeditor" id="newsletter-content" placeholder="Details of Newsletter" form="compose-newsletter" name="newsletter-content"></textarea>
-                <input type="submit" class="btn btn-send-newsletter" value="Send Newsletter">
+                <button type="submit" class="btn btn-send-newsletter" >Send Newsletter</button>
             </form>
             <div class="admin-alert"></div>
         </section>
@@ -87,7 +87,6 @@
     
     <script src="{{url_for('static',filename='script/adminData.js')}}"></script>
     <script src="{{url_for('static',filename='script/admin.js')}}"></script>
-    <script src="{{url_for('static',filename='script/register_app.js')}}"></script>
 </body>
 </html>
 

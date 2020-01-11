@@ -1,11 +1,13 @@
-from flask import Blueprint, flash, render_template, url_for, request,g,redirect,flash,session,json
+from bammysite.site import sitemod
+from flask import flash,current_app, render_template, url_for, request,g,redirect,flash,session,json
 from bammysite import db,ma,mail
 from bammysite.models import  Parent,Student,Siblings,subscriber,parent_schema
 from bammysite.models import parents_schema,student_schema,students_schema,sibling_schema,siblings_schema,News,Admin
+from flask_mail import Message
 import os
-sitemod = Blueprint('site', __name__, template_folder='templates')
+import smtplib
 
-from flask import current_app
+#from flask import current_app
 
 # check that current users have a session
 @sitemod.before_request
@@ -105,19 +107,26 @@ def admin_logout():
 	return redirect(url_for('site.admin_login'))
 
 
+
 @sitemod.route('/send_newsletter',methods=['GET','POST'])
 def send_newsletter():
 	if request.method == 'POST':
 		users = subscriber.query.all()
-		recipients = [user.email for user in users]
+		recipients = [user.sub_email for user in users]
 		subject = request.form['newsletter__title']
 		news_body = request.form['newsletter-content']
-		data = {'subject':subject,'recipients':recipients}
-		with current_app.app_context():
-			send_batch(data)
+		with mail.connect() as conn:
+			for user in users:
+				msg = Message(subject=subject,sender=current_app.config['MAIL_DEFAULT_SENDER'],recipients=recipients)
+				msg.body = render_template('newsletter.txt',news_body=news_body,subject=subject)
+				msg.html = render_template('newsletter.html',news_body=news_body,subject=subject)
+
+				try:
+					conn.send(msg)
+				except smtplib.SMTPException:
+					return redirect(url_for('site.admin'))
 
 	return redirect(url_for('site.admin'))
-
 
 @sitemod.route('/admin_signup',methods=['GET','POST'])
 def admin_signup():
@@ -129,6 +138,7 @@ def admin_signup():
 		db.session.add(admin)
 		db.session.commit()
 	return render_template('signup.html')
+
 # Newsletter
 @sitemod.route('/news_signup',methods=['GET','POST'])
 def news_signup():
@@ -153,7 +163,7 @@ def news_signup():
 
 		msg = "Congrats you've successfully registered on our mailing list"
 
-		return render_template('index.html',msg=msg)
+		return render_template('index.html')
 	return render_template('index.html')
 
 
@@ -173,7 +183,7 @@ def add_news():
 		if news != None:
 			msg = 'News created successfully!'
 
-	return render_template('admin_main.html',msg=msg)
+	return render_template('admin_main.html')
 
 @sitemod.route('/about')
 def about():

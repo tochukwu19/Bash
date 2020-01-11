@@ -32,7 +32,7 @@ addPhoto.addEventListener('click', () => {
 })
 
 
-storySubmit.addEventListener('click', (e) =>{
+/*storySubmit.addEventListener('click', (e) =>{
     e.preventDefault();
 
     let text = CKEDITOR.instances['story-info'].getData();
@@ -44,7 +44,7 @@ newsLetterSubmit.addEventListener('click', (e) =>{
 
     let text = CKEDITOR.instances['newsletter-content'].getData();
     return JSON.stringify(text);
-})
+})*/
 
 logoutBtn.addEventListener('click', () =>{
     mask.style.display = 'block';
