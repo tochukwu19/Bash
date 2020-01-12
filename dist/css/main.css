@@ -28,6 +28,7 @@ body{
     align-items: center;
     flex-direction: column;
      background-color: #635c5e;
+    width: 100%;
 }
 
 .social-media-nav > .contact-details{
@@ -44,8 +45,8 @@ body{
     padding-top: 8px;
     margin: 0;
     display: flex;
-    justify-content: space-around;
-    width: 50vw;
+    justify-content: space-between;
+    width: 65vw;
      text-align: center;
 }
 
@@ -73,6 +74,7 @@ body{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    width: 100%;
 }
 
 .sub-nav-bar li{
@@ -221,7 +223,6 @@ body{
     font-size: 30px;
     font-weight: bolder;
     color: #4D1010;
-   
  }
  
  .Register-link{
@@ -315,7 +316,7 @@ body{
        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
        background-color: #679436;
        color: #fff;
-       height: 250px;
+       height: 150px;
        width: 100%;
        text-align: center;
        padding: 5px 10px 10px 10px;
@@ -334,31 +335,55 @@ body{
   width: 220px;
   margin: auto;
   margin-bottom: 10px;
+  margin-left: 0;
+}
+.email-input{
+    margin-left: -20px;
+}
+.input-with-icon{
+width: 700px;
+padding: 5px;
+margin: 5px;
+font-size:15px;
+border: none;
+border-radius: 5px; 
+}
+.inputs{
+    display: flex;
+    width: 600px;
+    margin: auto;
+}
+.newsletter-title{
+    margin-bottom: 0;
 }
 
-
-
-.input-icon, .input-with-icon {
+.input-icon {
   padding: 10px;
   border: none;
 }
+.sub-footer-text{
+    margin-top: 5px;
+}
 
  .sub-footer2-container{
-  
      padding-right: 15px;
-   
  }
+.sub-footer2{
+    padding-bottom: 0;
+    width: 101%
+}
 /*Button*/
  .button{
-     padding: 5px 10px;
+     margin-left: 1rem;
+     margin-top: 0.4rem;
      background: #fff;
      color: #679436;
      border-radius: 4px;
      border: none;
-   
+    height: 30px;
 }
 .button:hover{
-    padding: 6px 12px;
+   
     background: #679436;
     color: #fff;
     border: solid #fff 1px;
@@ -370,15 +395,18 @@ body{
 
 /* For Smaller Devices */
  @media (max-width:800px) {
-     
-     .hamburger{
+      .hamburger{
          color: #679436;
+     }
+     .inputs{
+         display: flex;
+         
      }
      
      .nav-overlay{
     background-color: #fff;
     position: absolute;
-    left: -480px;
+    left: -560px;
     display: block;
     z-index: 1;
     width: 70vw;
@@ -390,27 +418,6 @@ body{
     font-size: 20px;
     z-index: 50;
  }
-     
-     .animate-in{
-    animation-name: animate-in;
-    animation-duration: 1s;
-    animation-fill-mode: forwards
-}
-.animate-out{
-    animation-name: animate-out;
-    animation-duration: 1s;
-    animation-fill-mode: forwards
-}
-@keyframes animate-in{
-   from {left: -420px;   opacity: 10;}
-    to {left: 0;   opacity: 1;}
-}
-
-@keyframes animate-out{
-    from {left: 0;   opacity: 1;}
-    to {left: -420px;   opacity: 0;}
-}
-
         
      .social-media-nav > .contact-details{
     list-style-type: none;
@@ -430,19 +437,19 @@ body{
      .social-media-nav > .social-details {
    list-style-type: none;
     padding: 0 0 0 20px;
-  
     display: flex;
-    justify-content: space-around;
-    width: 55vw;
+    justify-content: space-between;
+    width: 65vw;
    order: 2;
     text-align: center;
     
 }
-
-
+     #logo{
+         padding-right: 20px;
+     }
         .social-media-nav{
             height: 120px;
-            width: 100%;
+            width: 103%;
             display: flex;
             background-color: #635c5e;
             padding: 10px
@@ -461,13 +468,15 @@ body{
         }
         .sub-nav-bar{
             justify-content: space-between;
-            padding-right: 17px;
+            padding-right: 30px;
+            width: 100%;
         }
         .brandName{
             padding-left: 10px;
         }
         .landing-page-text{
             text-align: center;
+            padding: 20px;
         }
         .landing-page{
             height: 70vh;
@@ -528,35 +537,44 @@ body{
             display: none;
         }
         .testimonial{
-            height: 160px;
+            height: 110px;
         }
-      
-
+     .sub-footer2{
+         width: 103%;
+     }
+     .footer{
+         width: 100px;
+     }
  }
 
-
-
-  @media (max-width:435px) {
-      
-        .social-media-nav{
-            height: 80px;
-        }
-        .sub-footer2-container{
-            flex-direction: column;
-        }
-
-        .social-media-nav{
-            height: 130px;
-            flex-flow: column;
-            width: 96.9%;
-        }
-  }
-
-  @media (max-width:600px) {
-
-    .sub-footer2-container{
-            flex-direction: column;
-            align-items: center;
-        }
-
-  }
+@media (max-width:580px){
+    header{
+        width: 710px;
+    }
+    #logo{
+        padding-right: 35px;
+    }
+    .landing-page{
+        width: 710px;
+    }
+    .landing-page-text{
+        padding-left: 40px;
+    }
+    .latest-news-container{
+    width: 700px;
+    }
+    .news p{
+        font-size: 23px;
+    }
+    .Readmore{
+        padding-top: 10px;
+    }
+    .testimonial{
+        width: 700px
+    }
+    footer{
+        width: 720px;
+        padding-right: 0;
+    }
+}
+  
